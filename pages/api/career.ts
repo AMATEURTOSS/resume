@@ -9,9 +9,9 @@ interface Company {
   projects: Array<string>; // 프로젝트들
 }
 
-type Career = Array<Company>;
+export type Career = Array<Company>;
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export const getData = async (): Promise<Career> => {
   const career: Career = [
     {
       name: "f1security",
@@ -25,5 +25,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       ],
     },
   ];
+  return career;
+};
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const career = await getData();
   res.status(200).json(career);
 }

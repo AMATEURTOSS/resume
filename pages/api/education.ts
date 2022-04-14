@@ -9,9 +9,9 @@ interface School {
   describe: string | undefined;
 }
 
-type Education = Array<School>;
+export type Education = Array<School>;
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export const getData = async (): Promise<Education> => {
   const edu: Education = [
     {
       name: "충훈고등학교",
@@ -30,5 +30,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       describe: `PBL(Project Base Learning)과 동료학습(Peer Learning) 기반의 소프트웨어 인재 양성 프로그램`,
     },
   ];
+  return edu;
+};
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const edu = await getData();
   res.status(200).json(edu);
 }

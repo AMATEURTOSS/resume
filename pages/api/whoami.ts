@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-interface WhoAmI {
+export interface WhoAmI {
   name: string;
   email: string;
   phone: string;
@@ -8,10 +8,7 @@ interface WhoAmI {
   year: number; // 년차
 }
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<WhoAmI>
-) {
+export const getData = async (): Promise<WhoAmI> => {
   const currierStart = new Date("2022-02-21");
   const today = new Date();
   const whoAmI: WhoAmI = {
@@ -25,5 +22,13 @@ export default function handler(
           1970
       ) + 1,
   };
+  return whoAmI;
+};
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<WhoAmI>
+) {
+  const whoAmI = await getData();
   res.status(200).json(whoAmI);
 }

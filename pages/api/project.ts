@@ -11,9 +11,9 @@ interface Project {
   image: Array<string>;
 }
 
-type Projects = Array<Project>;
+export type Projects = Array<Project>;
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export const getData = async (): Promise<Projects> => {
   const projects: Projects = [
     {
       name: "ft_linear_regression",
@@ -154,5 +154,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       image: [],
     },
   ];
+  return projects;
+};
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const projects = await getData();
   res.status(200).json(projects);
 }

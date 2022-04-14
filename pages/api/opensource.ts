@@ -7,9 +7,9 @@ interface Project {
   prURL: Array<string>; // Pull Request URL
 }
 
-type OpenSource = Array<Project>;
+export type OpenSource = Array<Project>;
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export const getData = async (): Promise<OpenSource> => {
   const openSource: OpenSource = [
     {
       name: "tldr",
@@ -22,5 +22,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       ],
     },
   ];
+  return openSource;
+};
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const openSource = await getData();
   res.status(200).json(openSource);
 }
