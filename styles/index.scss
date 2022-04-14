@@ -1,0 +1,58 @@
+main {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 0 auto;
+  section.basic_info {
+    display: flex;
+    align-items: center;
+    img {
+      border-radius: 50%;
+      width: 9.375em;
+    }
+    div {
+      h1.name {
+        font-size: 3em;
+        margin: 0.3em auto 0.3em auto;
+      }
+      span.email {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75em;
+      }
+      div.phone_birth_year {
+        display: flex;
+        gap: 2em;
+        span {
+          display: flex;
+          align-items: center;
+        }
+        span + span {
+          &::before {
+            position: relative;
+            left: -0.9375em;
+            content: "|";
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  main {
+    section.basic_info {
+      flex-direction: column;
+      div {
+        div.phone_birth_year {
+          flex-direction: column;
+          gap: 0.75em;
+          span + span {
+            &::before {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
