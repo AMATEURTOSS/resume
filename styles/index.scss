@@ -1,11 +1,13 @@
 main {
   width: 100%;
   max-width: 800px;
-  margin: 0 auto 0 auto;
+  margin: 1em auto 0 auto;
   section.basic_info {
     display: flex;
+    gap: 1em;
     align-items: center;
     img {
+      border: 1px solid rgba(128, 128, 128, 0.5);
       border-radius: 50%;
       width: 9.375em;
     }
@@ -42,6 +44,7 @@ main {
   main {
     section.basic_info {
       flex-direction: column;
+      gap: 0;
       div {
         div.phone_birth_year {
           flex-direction: column;
