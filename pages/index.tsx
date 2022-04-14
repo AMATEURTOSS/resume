@@ -1,8 +1,15 @@
-import { getData } from "./api/whoami";
+import { getData as whoAmIGetData } from "./api/whoami";
+import { getData as techStackGetData } from "./api/techstack";
 import type { NextPage, GetStaticProps } from "next";
 import type { WhoAmI } from "./api/whoami";
+import type { TechStack } from "./api/techstack";
 
-const Home: NextPage<{ whoami: WhoAmI }> = ({ whoami }) => {
+interface Props {
+  whoami: WhoAmI;
+  techStack: TechStack;
+}
+
+const Home: NextPage<Props> = ({ whoami, techStack }) => {
   return (
     <main>
       <section className="basic_info">
@@ -29,15 +36,25 @@ const Home: NextPage<{ whoami: WhoAmI }> = ({ whoami }) => {
           </div>
         </div>
       </section>
+      <section className="tech_stack">
+        <h2>기술 스택</h2>
+        <div className="stack_wrapper">
+          {techStack.map((el, idx) => (
+            <span key={idx}>{el}</span>
+          ))}
+        </div>
+      </section>
     </main>
   );
 };
 
 export const getStaticProps: GetStaticProps<{ whoami: WhoAmI }> = async () => {
-  const whoami: WhoAmI = await getData();
+  const whoami: WhoAmI = await whoAmIGetData();
+  const techStack: TechStack = await techStackGetData();
   return {
     props: {
       whoami,
+      techStack,
     },
   };
 };

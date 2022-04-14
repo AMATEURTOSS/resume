@@ -1,30 +1,24 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-export interface TechStack {
-  stack: Array<string>; // 기술 스택
-  duty: Array<string>; // 직무
-}
+export type TechStack = Array<string>;
 
 export const getData = async (): Promise<TechStack> => {
-  const techStack: TechStack = {
-    stack: [
-      "javascript",
-      "typescript",
-      "nodejs",
-      "mariadb",
-      "python",
-      "react",
-      "expressjs",
-      "nestjs",
-      "nextjs",
-      "c",
-      "c++",
-      "docker",
-      "docker compose",
-      "git",
-    ],
-    duty: ["웹 풀스택 개발자"],
-  };
+  const techStack: TechStack = [
+    "javascript",
+    "typescript",
+    "nodejs",
+    "mariadb",
+    "python",
+    "react",
+    "expressjs",
+    "nestjs",
+    "nextjs",
+    "c",
+    "c++",
+    "docker",
+    "docker compose",
+    "git",
+  ];
   return techStack;
 };
 
