@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 interface Project {
-  projectName: string;
-  projectURL: string;
+  name: string;
+  url: string;
   contributeType: string; // 기여 종류 (번역, 코드 수정 등등)
   prURL: Array<string>; // Pull Request URL
 }
@@ -12,8 +12,8 @@ type OpenSource = Array<Project>;
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const openSource: OpenSource = [
     {
-      projectName: "tldr",
-      projectURL: "https://github.com/tldr-pages/tldr",
+      name: "tldr",
+      url: "https://github.com/tldr-pages/tldr",
       contributeType: "번역",
       prURL: [
         "https://github.com/tldr-pages/tldr/pull/7959",

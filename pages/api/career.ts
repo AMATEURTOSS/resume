@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 interface Company {
-  companyName: string; // 회사 이름
+  name: string; // 회사 이름
   department: string | undefined; // 부서명
   position: string | undefined; // 직책
   enteringDate: Date; // 입사일자
@@ -14,7 +14,7 @@ type Career = Array<Company>;
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const career: Career = [
     {
-      companyName: "f1security",
+      name: "f1security",
       department: "악성코드대응사업부",
       position: "주임",
       enteringDate: new Date("2022-02-21"),
