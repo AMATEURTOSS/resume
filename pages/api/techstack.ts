@@ -10,7 +10,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     stack: [
       "javascript",
       "typescript",
-      "node.js",
+      "nodejs",
       "mariadb",
       "python",
       "react",
