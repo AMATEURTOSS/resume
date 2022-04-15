@@ -46,7 +46,7 @@ const ProjectElement: FC<{ project: Project; key: number }> = ({
             ))}
           </div>
         </div>
-        <i className="xi-caret-down" />
+        <i className={isOpen ? "xi-caret-up" : "xi-caret-down"} />
       </div>
       {isOpen && (
         <div className="opensource_describe">
