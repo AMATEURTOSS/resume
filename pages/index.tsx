@@ -1,18 +1,22 @@
 import { getData as whoAmIGetData } from "./api/whoami";
 import { getData as techStackGetData } from "./api/techstack";
 import { getData as educationGetData } from "./api/education";
+import { getData as careerGetData } from "./api/career";
 import type { NextPage, GetStaticProps } from "next";
 import type { WhoAmI } from "./api/whoami";
 import type { TechStack } from "./api/techstack";
 import type { Education } from "./api/education";
+import type { Career } from "./api/career";
 
 interface Props {
   whoami: WhoAmI;
   techStack: TechStack;
   edu: Education;
+  career: Career;
 }
 
-const Home: NextPage<Props> = ({ whoami, techStack, edu }) => {
+const Home: NextPage<Props> = (info) => {
+  const { whoami, techStack, edu, career } = info;
   return (
     <main>
       <section className="basic_info">
@@ -47,6 +51,49 @@ const Home: NextPage<Props> = ({ whoami, techStack, edu }) => {
           ))}
         </div>
       </section>
+      <section className="career">
+        <h2>경력</h2>
+        {career
+          .slice(0)
+          .reverse()
+          .map((el, idx) => {
+            return (
+              <div className="career_wrapper" key={idx}>
+                <div className="key_value name">
+                  <span>회사명</span>
+                  <span>{el.name}</span>
+                </div>
+                <div className="key_value department">
+                  <span>부서명</span>
+                  <span>{el.department}</span>
+                </div>
+                <div className="key_value position">
+                  <span>직책</span>
+                  <span>{el.position}</span>
+                </div>
+                <div className="key_value entering">
+                  <span>입사일</span>
+                  <span>{el.enteringDate}</span>
+                </div>
+                <div className="key_value resignation">
+                  <span>퇴사일</span>
+                  <span>{el.resignationDate ?? "재직중"}</span>
+                </div>
+                <div className="key_value projects">
+                  <span>프로젝트</span>
+                  <ul>
+                    {el.projects
+                      .slice(0)
+                      .reverse()
+                      .map((el, idx) => (
+                        <li key={idx}>{el}</li>
+                      ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
+      </section>
       <section className="education">
         <h2>교육 이력</h2>
         {edu
@@ -54,7 +101,7 @@ const Home: NextPage<Props> = ({ whoami, techStack, edu }) => {
           .reverse()
           .map((el, idx) => {
             return (
-              <div className="school-wrapper" key={idx}>
+              <div className="school_wrapper" key={idx}>
                 <div className="key_value name">
                   <span>학교명</span>
                   <span>{el.name}</span>
@@ -83,20 +130,23 @@ const Home: NextPage<Props> = ({ whoami, techStack, edu }) => {
             );
           })}
       </section>
+      <div style={{ width: "100%", height: "200px" }} />
     </main>
   );
 };
 
-export const getStaticProps: GetStaticProps<{ whoami: WhoAmI }> = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const whoami: WhoAmI = await whoAmIGetData();
   const techStack: TechStack = await techStackGetData();
   const edu: Education = await educationGetData();
+  const career: Career = await careerGetData();
   return {
     props: JSON.parse(
       JSON.stringify({
         whoami,
         techStack,
         edu,
+        career,
       })
     ),
   };
