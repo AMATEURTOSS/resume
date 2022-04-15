@@ -31,6 +31,7 @@
   "lint-staged":{
     "**/*.{js,jsx,ts,tsx}":[
       "prettier --write ./pages",
+      "prettier --write ./component",
       "prettier --write ./styles"
     ]
   }
