@@ -16,6 +16,7 @@ import type { TechStack } from "./api/techstack";
 import type { Education } from "./api/education";
 import type { Career } from "./api/career";
 import type { OpenSource } from "./api/opensource";
+import Footer from "../component/Footer";
 
 interface Props {
   whoami: WhoAmI;
@@ -28,13 +29,16 @@ interface Props {
 const Home: NextPage<Props> = (info) => {
   const { whoami, techStack, edu, career, opensource } = info;
   return (
-    <main>
-      <BasicInfoSection whoami={whoami} />
-      <TechStackSection techStack={techStack} />
-      <CareerSection career={career} />
-      <EducationSection edu={edu} />
-      <OpensourceSection opensource={opensource} />
-    </main>
+    <>
+      <main>
+        <BasicInfoSection whoami={whoami} />
+        <TechStackSection techStack={techStack} />
+        <CareerSection career={career} />
+        <EducationSection edu={edu} />
+        <OpensourceSection opensource={opensource} />
+      </main>
+      <Footer />
+    </>
   );
 };
 
