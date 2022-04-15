@@ -24,8 +24,8 @@ export const getData = async (): Promise<Projects> => {
       techStack: ["python"],
       describe: "ML 알고리즘인 선형회귀를 구현한 프로젝트입니다.",
       image: [
-        "public/project/ft_linear_regression/1.png",
-        "public/project/ft_linear_regression/2.png",
+        "/project/ft_linear_regression/1.png",
+        "/project/ft_linear_regression/2.png",
       ],
     },
     {
@@ -47,7 +47,7 @@ export const getData = async (): Promise<Projects> => {
       ],
       describe:
         "인터넷 방송 플랫폼인 Twitch에서 C++로 만든 IRC Client로 채팅 로그를 긁어와 분석, 통계를 제공하는 웹 사이트입니다.",
-      image: ["public/project/tchatong/1.png"],
+      image: ["/project/tchatong/1.png"],
     },
     {
       name: "pong_pong_website",
@@ -58,7 +58,7 @@ export const getData = async (): Promise<Projects> => {
       techStack: ["reactjs", "nestjs", "postgres"],
       describe:
         "온라인 실시간 탁구 게임채팅, Dm, 친구 추가/삭제, 전적 등의 서비스를 제공하는 웹 어플리케이션입니다.",
-      image: ["public/project/pong_pong_website/1.png"],
+      image: ["/project/pong_pong_website/1.png"],
     },
     {
       name: "ft_irc",
@@ -68,7 +68,7 @@ export const getData = async (): Promise<Projects> => {
       end: new Date("2021-06-01"),
       techStack: ["c++"],
       describe: "RFC 문서를 바탕으로 작성된 IRC 서버입니다.",
-      image: ["public/project/ft_irc/1.png"],
+      image: ["/project/ft_irc/1.png"],
     },
     {
       name: "ft_container",

@@ -1,35 +1,39 @@
 import { getData as whoAmIGetData } from "./api/whoami";
 import { getData as techStackGetData } from "./api/techstack";
-import { getData as educationGetData } from "./api/education";
 import { getData as careerGetData } from "./api/career";
+import { getData as educationGetData } from "./api/education";
+import { getData as opensourceGetData } from "./api/opensource";
 
 import BasicInfoSection from "../component/BasicInfoSection";
 import TechStackSection from "../component/TechStackSection";
 import CareerSection from "../component/CareerSection";
 import EducationSection from "../component/EducationSection";
+import OpensourceSection from "../component/OpensourceSection";
 
 import type { NextPage, GetStaticProps } from "next";
 import type { WhoAmI } from "./api/whoami";
 import type { TechStack } from "./api/techstack";
 import type { Education } from "./api/education";
 import type { Career } from "./api/career";
+import type { OpenSource } from "./api/opensource";
 
 interface Props {
   whoami: WhoAmI;
   techStack: TechStack;
   edu: Education;
   career: Career;
+  opensource: OpenSource;
 }
 
 const Home: NextPage<Props> = (info) => {
-  const { whoami, techStack, edu, career } = info;
+  const { whoami, techStack, edu, career, opensource } = info;
   return (
     <main>
       <BasicInfoSection whoami={whoami} />
       <TechStackSection techStack={techStack} />
       <CareerSection career={career} />
       <EducationSection edu={edu} />
-      <div style={{ width: "100%", height: "200px" }} />
+      <OpensourceSection opensource={opensource} />
     </main>
   );
 };
@@ -37,8 +41,9 @@ const Home: NextPage<Props> = (info) => {
 export const getStaticProps: GetStaticProps = async () => {
   const whoami: WhoAmI = await whoAmIGetData();
   const techStack: TechStack = await techStackGetData();
-  const edu: Education = await educationGetData();
   const career: Career = await careerGetData();
+  const edu: Education = await educationGetData();
+  const opensource: OpenSource = await opensourceGetData();
   return {
     props: JSON.parse(
       JSON.stringify({
@@ -46,6 +51,7 @@ export const getStaticProps: GetStaticProps = async () => {
         techStack,
         edu,
         career,
+        opensource,
       })
     ),
   };
