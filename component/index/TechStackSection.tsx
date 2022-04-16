@@ -1,6 +1,6 @@
 import { FC } from "react";
-import styles from "../styles/component/TechStackSection.module.css";
-import type { TechStack } from "../pages/api/techstack";
+import styles from "../../styles/component/index/TechStackSection.module.css";
+import type { TechStack } from "../../pages/api/techstack";
 
 const TechStackSection: FC<{ techStack: TechStack }> = ({ techStack }) => {
   return (

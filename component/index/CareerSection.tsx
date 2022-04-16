@@ -1,7 +1,7 @@
 import { FC } from "react";
-import share from "../styles/share.module.css";
-import styles from "../styles/component/CareerSection.module.css";
-import type { Career } from "../pages/api/career";
+import share from "../../styles/share.module.css";
+import styles from "../../styles/component/index/CareerSection.module.css";
+import type { Career } from "../../pages/api/career";
 
 const CareerSection: FC<{ career: Career }> = ({ career }) => {
   return (

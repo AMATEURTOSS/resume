@@ -1,7 +1,7 @@
 import { FC } from "react";
-import share from "../styles/share.module.css";
-import styles from "../styles/component/EducationSection.module.css";
-import type { Education } from "../pages/api/education";
+import share from "../../styles/share.module.css";
+import styles from "../../styles/component/common/EducationSection.module.css";
+import type { Education } from "../../pages/api/education";
 
 const EducationSection: FC<{ edu: Education }> = ({ edu }) => {
   return (

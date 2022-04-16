@@ -1,6 +1,6 @@
 import { FC } from "react";
-import styles from "../styles/component/BasicInfoSection.module.css";
-import type { WhoAmI } from "../pages/api/whoami";
+import styles from "../../styles/component/common/BasicInfoSection.module.css";
+import type { WhoAmI } from "../../pages/api/whoami";
 
 const BasicInfoSection: FC<{ whoami: WhoAmI }> = ({ whoami }) => {
   return (

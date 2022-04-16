@@ -1,0 +1,55 @@
+.opensource_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+  border-radius: 2em;
+}
+
+.opensource_wrapper i {
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+.opensource_wrapper:hover {
+  background-color: #ececec7f;
+  transition-duration: 0.3s;
+}
+
+.img {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 50%;
+  width: 4.375em;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 2em;
+}
+
+.contribute_type_wrapper {
+  display: flex;
+  gap: 0.2em;
+}
+
+.type {
+  text-align: center;
+  border-radius: 2em;
+  padding: 0.1em 0.4em 0.1em 0.4em;
+}
+
+.describe {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+
+.describe a {
+  display: flex;
+  align-items: center;
+}

@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-import share from "../styles/share.module.css";
-import styles from "../styles/component/OpensourceSection.module.css";
-import type { OpenSource, Project } from "../pages/api/opensource";
+import share from "../../styles/share.module.css";
+import styles from "../../styles/component/index/OpensourceSection.module.css";
+import type { OpenSource, Project } from "../../pages/api/opensource";
 
 function getBackgroundColorFromType(type: string) {
   switch (type) {
