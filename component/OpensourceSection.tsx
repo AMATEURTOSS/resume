@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import styles from "../styles/component/OpensourceSection.module.css";
 import type { OpenSource, Project } from "../pages/api/opensource";
 
 function getBackgroundColorFromType(type: string) {
@@ -28,14 +29,18 @@ const ProjectElement: FC<{ project: Project; key: number }> = ({
 
   return (
     <>
-      <div className="opensource_wrapper" key={key} onClick={onClick}>
-        <img src={project.logo} alt={`${project.name}'s logo`} />
-        <div className="opensource_info">
-          <span className="name">{project.name}</span>
-          <div className="contribute_type_wrapper">
+      <div className={styles.opensource_wrapper} key={key} onClick={onClick}>
+        <img
+          src={project.logo}
+          alt={`${project.name}'s logo`}
+          className={styles.img}
+        />
+        <div className={styles.info}>
+          <span className={styles.name}>{project.name}</span>
+          <div className={styles.contribute_type_wrapper}>
             {project.contributeType.map((contributeType, idx) => (
               <span
-                className="type"
+                className={styles.type}
                 key={idx}
                 style={{
                   backgroundColor: getBackgroundColorFromType(contributeType),
@@ -49,7 +54,7 @@ const ProjectElement: FC<{ project: Project; key: number }> = ({
         <i className={isOpen ? "xi-caret-up" : "xi-caret-down"} />
       </div>
       {isOpen && (
-        <div className="opensource_describe">
+        <div className={styles.describe}>
           <a href={project.url} target="_blank" rel="noreferrer">
             <i className="xi-github"></i>github 바로가기
           </a>

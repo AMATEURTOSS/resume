@@ -1,37 +1,39 @@
 import { FC } from "react";
+import common from "../styles/common.module.css";
+import styles from "../styles/component/CareerSection.module.css";
 import type { Career } from "../pages/api/career";
 
 const CareerSection: FC<{ career: Career }> = ({ career }) => {
   return (
-    <section className="career">
+    <section>
       <h2>경력</h2>
       {career
         .slice(0)
         .reverse()
         .map((el, idx) => {
           return (
-            <div className="career_wrapper" key={idx}>
-              <div className="key_value name">
+            <div className={styles.career_wrapper} key={idx}>
+              <div className={`${common.key_value} ${styles.name}`}>
                 <span>회사명</span>
                 <span>{el.name}</span>
               </div>
-              <div className="key_value department">
+              <div className={`${common.key_value} ${styles.department}`}>
                 <span>부서명</span>
                 <span>{el.department}</span>
               </div>
-              <div className="key_value position">
+              <div className={`${common.key_value} ${styles.position}`}>
                 <span>직책</span>
                 <span>{el.position}</span>
               </div>
-              <div className="key_value entering">
+              <div className={`${common.key_value} ${styles.entering}`}>
                 <span>입사일</span>
                 <span>{el.enteringDate}</span>
               </div>
-              <div className="key_value resignation">
+              <div className={`${common.key_value} ${styles.resignation}`}>
                 <span>퇴사일</span>
                 <span>{el.resignationDate ?? "재직중"}</span>
               </div>
-              <div className="key_value projects">
+              <div className={`${common.key_value} ${styles.projects}`}>
                 <span>프로젝트</span>
                 <ul>
                   {el.projects

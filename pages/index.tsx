@@ -19,6 +19,8 @@ import type { OpenSource } from "./api/opensource";
 import Footer from "../component/Footer";
 import Head from "next/head";
 
+import styles from "../styles/index.module.css";
+
 interface Props {
   whoami: WhoAmI;
   techStack: TechStack;
@@ -34,7 +36,7 @@ const Home: NextPage<Props> = (info) => {
       <Head>
         <title>&lt;yochoi&apos;s resume /&gt;</title>
       </Head>
-      <main>
+      <main className={styles.main}>
         <BasicInfoSection whoami={whoami} />
         <TechStackSection techStack={techStack} />
         <CareerSection career={career} />

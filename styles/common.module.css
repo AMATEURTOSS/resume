@@ -1,0 +1,22 @@
+.key_value {
+  display: flex;
+  flex-direction: column;
+}
+
+.key_value *:last-child {
+  background-color: #eeeeeeff;
+  border-radius: 0.5em;
+}
+
+.key_value span:last-child {
+  display: inline-block;
+  padding: 1em;
+  min-height: 3em;
+}
+
+.key_value ul:last-child {
+  margin: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-right: 1.25em;
+}

@@ -9,9 +9,10 @@ body {
 
 i {
   font-size: 1.5em;
-  &::after {
-    content: "\00a0"; // white-space
-  }
+}
+
+i::after {
+  content: "\00a0";
 }
 
 a {
@@ -21,4 +22,11 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h2 {
+  border-top: 1px solid black;
+  padding-top: 1em;
+  width: 100%;
+  text-align: center;
 }

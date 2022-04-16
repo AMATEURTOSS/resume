@@ -1,17 +1,18 @@
 import { FC } from "react";
+import styles from "../styles/component/BasicInfoSection.module.css";
 import type { WhoAmI } from "../pages/api/whoami";
 
 const BasicInfoSection: FC<{ whoami: WhoAmI }> = ({ whoami }) => {
   return (
-    <section className="basic_info">
-      <img src="profile.jpg" alt="profile" />
+    <section className={styles.basic_info}>
+      <img src="profile.jpg" alt="profile" className={styles.profile_image} />
       <div>
-        <h1 className="name">{whoami.name}</h1>
-        <span className="email">
+        <h1 className={styles.name}>{whoami.name}</h1>
+        <span className={styles.email}>
           <i className="xi-mail-o" />
           {whoami.email}
         </span>
-        <div className="phone_birth_year">
+        <div className={styles.phone_birth_year}>
           <span>
             <i className="xi-call" />
             {whoami.phone}
