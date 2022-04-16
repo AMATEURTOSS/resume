@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import common from "../styles/common.module.css";
+import share from "../styles/share.module.css";
 import styles from "../styles/component/OpensourceSection.module.css";
 import type { OpenSource, Project } from "../pages/api/opensource";
 
@@ -59,11 +59,11 @@ const ProjectElement: FC<{ project: Project; key: number }> = ({
           <a href={project.url} target="_blank" rel="noreferrer">
             <i className="xi-github"></i>github 바로가기
           </a>
-          <div className={common.key_value}>
+          <div className={share.key_value}>
             <span>{project.name}이란?</span>
             <span>{project.describe}</span>
           </div>
-          <div className={common.key_value}>
+          <div className={share.key_value}>
             <span>PR 리스트</span>
             <ul>
               {project.prURL.map((prURL, idx) => (

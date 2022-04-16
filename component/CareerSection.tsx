@@ -1,5 +1,5 @@
 import { FC } from "react";
-import common from "../styles/common.module.css";
+import share from "../styles/share.module.css";
 import styles from "../styles/component/CareerSection.module.css";
 import type { Career } from "../pages/api/career";
 
@@ -13,27 +13,27 @@ const CareerSection: FC<{ career: Career }> = ({ career }) => {
         .map((el, idx) => {
           return (
             <div className={styles.career_wrapper} key={idx}>
-              <div className={`${common.key_value} ${styles.name}`}>
+              <div className={`${share.key_value} ${styles.name}`}>
                 <span>회사명</span>
                 <span>{el.name}</span>
               </div>
-              <div className={`${common.key_value} ${styles.department}`}>
+              <div className={`${share.key_value} ${styles.department}`}>
                 <span>부서명</span>
                 <span>{el.department}</span>
               </div>
-              <div className={`${common.key_value} ${styles.position}`}>
+              <div className={`${share.key_value} ${styles.position}`}>
                 <span>직책</span>
                 <span>{el.position}</span>
               </div>
-              <div className={`${common.key_value} ${styles.entering}`}>
+              <div className={`${share.key_value} ${styles.entering}`}>
                 <span>입사일</span>
                 <span>{el.enteringDate}</span>
               </div>
-              <div className={`${common.key_value} ${styles.resignation}`}>
+              <div className={`${share.key_value} ${styles.resignation}`}>
                 <span>퇴사일</span>
                 <span>{el.resignationDate ?? "재직중"}</span>
               </div>
-              <div className={`${common.key_value} ${styles.projects}`}>
+              <div className={`${share.key_value} ${styles.projects}`}>
                 <span>프로젝트</span>
                 <ul>
                   {el.projects
