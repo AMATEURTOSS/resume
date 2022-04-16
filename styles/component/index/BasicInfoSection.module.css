@@ -1,3 +1,6 @@
+.info {
+}
+
 .basic_info {
   display: flex;
   gap: 1em;
@@ -37,6 +40,75 @@
   content: "|";
 }
 
+.stack_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.stack_wrapper span {
+  border-radius: 0.5em;
+  display: inline-block;
+  background-color: #eeeeeeff;
+  padding: 1em;
+}
+
+.opensource_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+  border-radius: 2em;
+}
+
+.opensource_wrapper i {
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+.opensource_wrapper:hover {
+  background-color: #ececec7f;
+  transition-duration: 0.3s;
+}
+
+.opensource_img {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 50%;
+  width: 4.375em;
+}
+
+.opensource_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.opensource_name {
+  font-size: 2em;
+}
+
+.contribute_type_wrapper {
+  display: flex;
+  gap: 0.2em;
+}
+
+.type {
+  text-align: center;
+  border-radius: 2em;
+  padding: 0.1em 0.4em 0.1em 0.4em;
+}
+
+.opensource_describe {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+
+.opensource_describe a {
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (max-width: 650px) {
   .basic_info {
     flex-direction: column;
@@ -48,5 +120,15 @@
   }
   .phone_birth_year span + span::before {
     content: none;
+  }
+
+  .tech_stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stack_wrapper {
+    gap: 0.1em;
+    justify-content: center;
   }
 }

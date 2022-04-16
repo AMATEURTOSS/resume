@@ -5,10 +5,8 @@ import { getData as educationGetData } from "./api/education";
 import { getData as opensourceGetData } from "./api/opensource";
 
 import BasicInfoSection from "../component/index/BasicInfoSection";
-import TechStackSection from "../component/index/TechStackSection";
 import CareerSection from "../component/index/CareerSection";
 import EducationSection from "../component/index/EducationSection";
-import OpensourceSection from "../component/index/OpensourceSection";
 
 import type { NextPage, GetStaticProps } from "next";
 import type { WhoAmI } from "./api/whoami";
@@ -37,11 +35,13 @@ const Home: NextPage<Props> = (info) => {
         <title>&lt;yochoi&apos;s resume /&gt;</title>
       </Head>
       <main className={styles.main}>
-        <BasicInfoSection whoami={whoami} />
-        <TechStackSection techStack={techStack} />
+        <BasicInfoSection
+          whoami={whoami}
+          techStack={techStack}
+          opensource={opensource}
+        />
         <CareerSection career={career} />
         <EducationSection edu={edu} />
-        <OpensourceSection opensource={opensource} />
       </main>
       <Footer />
     </>
