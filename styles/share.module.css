@@ -27,6 +27,7 @@
   flex-direction: column;
   justify-content: center;
   border-top: 1px solid black;
+  scroll-snap-align: start;
 }
 
 .section h2 {
