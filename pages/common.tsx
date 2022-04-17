@@ -19,7 +19,7 @@ import type { OpenSource } from "./api/opensource";
 import Footer from "../component/Footer";
 import Head from "next/head";
 
-import styles from "../styles/index.module.css";
+import styles from "../styles/common.module.css";
 
 interface Props {
   whoami: WhoAmI;
