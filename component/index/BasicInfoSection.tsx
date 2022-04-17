@@ -38,7 +38,7 @@ const ProjectElement: FC<{ project: Project; key: number }> = ({
           alt={`${project.name}'s logo`}
           className={styles.opensource_img}
         />
-        <div className={styles.info}>
+        <div className={styles.opensource_info}>
           <span className={styles.opensource_name}>{project.name}</span>
           <div className={styles.contribute_type_wrapper}>
             {project.contributeType.map((contributeType, idx) => (
