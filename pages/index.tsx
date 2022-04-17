@@ -34,6 +34,11 @@ const Home: NextPage<Props> = (info) => {
     <>
       <Head>
         <title>&lt;yochoi&apos;s resume /&gt;</title>
+        <style>{`
+        html {
+          scroll-snap-type: y mandatory;
+        }
+        `}</style>
       </Head>
       <main className={styles.main}>
         <HelloSection />
