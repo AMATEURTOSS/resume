@@ -1,0 +1,72 @@
+.experienceSection {
+  padding-bottom: 120px;
+}
+.experienceList section {
+  padding-right: 70px;
+}
+.experienceList {
+  padding-top: 15px;
+}
+.officename {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.experienceList span {
+  display: block;
+}
+span.year {
+  color: #373737;
+  font-size: 14px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+span.department {
+  color: #373737;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 30px;
+}
+.experienceList p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+}
+.experienceList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+}
+.experienceList ul li {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.experienceList ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  background-color: #373737;
+}
+
+@media (max-width: 768px) {
+  .experienceSection {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0;
+  }
+  .experienceList :global(.col-12) {
+    margin-bottom: 40px;
+  }
+  .experienceList section {
+    padding-right: 0;
+  }
+}

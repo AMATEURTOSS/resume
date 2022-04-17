@@ -1,0 +1,82 @@
+.banner section {
+  padding-left: 70px;
+  padding-right: 100px;
+}
+.banner section h1 span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 16px;
+  padding-bottom: 30px;
+}
+.banner section h1 {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 60px;
+  color: #000;
+}
+.numbervalulist {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  margin-top: 60px;
+}
+.numbervalulist li {
+  margin-right: 60px;
+}
+.numbervalulist li:last-child {
+  margin-right: 0;
+}
+.numbervalulist strong {
+  display: block;
+  color: #f26464;
+  font-size: 36px;
+  font-weight: 800;
+}
+.numbervalulist span {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .banner figure {
+    padding: 30px 0;
+  }
+  .banner section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .banner section h1 span {
+    padding-bottom: 0;
+  }
+  .banner section h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .numbervalulist {
+    margin-top: 20px;
+  }
+  .numbervalulist li {
+    margin-right: 30px;
+  }
+  .numbervalulist strong {
+    font-size: 30px;
+  }
+  .numbervalulist span {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .banner section {
+    padding-right: 0;
+  }
+}

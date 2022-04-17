@@ -12,7 +12,13 @@ import type { Career } from "./api/career";
 import type { OpenSource } from "./api/opensource";
 import Head from "next/head";
 
-import styles from "../styles/index.module.css";
+import Header from "../component/Header";
+import Banner from "../component/Banner";
+import About from "../component/About";
+import Skills from "../component/Skills";
+import Experience from "../component/Experience";
+import Projects from "../component/Projects";
+import Footer from "../component/Footer";
 
 interface Props {
   whoami: WhoAmI;
@@ -24,7 +30,20 @@ interface Props {
 
 const Home: NextPage<Props> = (info) => {
   const { whoami, techStack, edu, career, opensource } = info;
-  return <></>;
+  return (
+    <>
+      <Head>
+        <title>{`<yochoi's resume />`}</title>
+      </Head>
+      <Header />
+      <Banner />
+      <About />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Footer />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {

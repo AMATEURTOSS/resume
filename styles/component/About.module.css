@@ -1,0 +1,31 @@
+.aboutSection {
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+.aboutSection p {
+  color: #373737;
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: 300;
+  margin-bottom: 60px;
+}
+
+.arrowButton i {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .aboutSection {
+    padding-bottom: 60px;
+  }
+  .aboutSection p {
+    font-size: 15px;
+    line-height: 30px;
+    margin-bottom: 30px;
+  }
+}
