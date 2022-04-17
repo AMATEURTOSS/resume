@@ -4,18 +4,12 @@ import { getData as careerGetData } from "./api/career";
 import { getData as educationGetData } from "./api/education";
 import { getData as opensourceGetData } from "./api/opensource";
 
-import HelloSection from "../component/index/HelloSection";
-import BasicInfoSection from "../component/index/InfoSection";
-import CareerSection from "../component/index/CareerSection";
-import EducationSection from "../component/index/EducationSection";
-
 import type { NextPage, GetStaticProps } from "next";
 import type { WhoAmI } from "./api/whoami";
 import type { TechStack } from "./api/techstack";
 import type { Education } from "./api/education";
 import type { Career } from "./api/career";
 import type { OpenSource } from "./api/opensource";
-import Footer from "../component/Footer";
 import Head from "next/head";
 
 import styles from "../styles/index.module.css";
@@ -30,29 +24,7 @@ interface Props {
 
 const Home: NextPage<Props> = (info) => {
   const { whoami, techStack, edu, career, opensource } = info;
-  return (
-    <>
-      <Head>
-        <title>&lt;yochoi&apos;s resume /&gt;</title>
-        <style>{`
-        html {
-          scroll-snap-type: y mandatory;
-        }
-        `}</style>
-      </Head>
-      <main className={styles.main}>
-        <HelloSection />
-        <BasicInfoSection
-          whoami={whoami}
-          techStack={techStack}
-          opensource={opensource}
-        />
-        <CareerSection career={career} />
-        <EducationSection edu={edu} />
-      </main>
-      <Footer />
-    </>
-  );
+  return <></>;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
