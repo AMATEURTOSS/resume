@@ -4,6 +4,7 @@ import { getData as careerGetData } from "./api/career";
 import { getData as educationGetData } from "./api/education";
 import { getData as opensourceGetData } from "./api/opensource";
 
+import HelloSection from "../component/index/HelloSection";
 import BasicInfoSection from "../component/index/BasicInfoSection";
 import CareerSection from "../component/index/CareerSection";
 import EducationSection from "../component/index/EducationSection";
@@ -35,6 +36,7 @@ const Home: NextPage<Props> = (info) => {
         <title>&lt;yochoi&apos;s resume /&gt;</title>
       </Head>
       <main className={styles.main}>
+        <HelloSection />
         <BasicInfoSection
           whoami={whoami}
           techStack={techStack}
