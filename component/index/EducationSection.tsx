@@ -5,7 +5,7 @@ import type { Education } from "../../pages/api/education";
 
 const EducationSection: FC<{ edu: Education }> = ({ edu }) => {
   return (
-    <section>
+    <section className={share.section}>
       <h2>교육 이력</h2>
       {edu
         .slice(0)

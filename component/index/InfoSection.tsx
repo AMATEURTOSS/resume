@@ -1,9 +1,9 @@
 import { FC, useState } from "react";
+import share from "../../styles/share.module.css";
 import styles from "../../styles/component/index/InfoSection.module.css";
 import type { WhoAmI } from "../../pages/api/whoami";
 import type { TechStack } from "../../pages/api/techstack";
 import { OpenSource, Project } from "../../pages/api/opensource";
-import share from "../../styles/share.module.css";
 
 function getBackgroundColorFromType(type: string) {
   switch (type) {
@@ -95,7 +95,7 @@ const InfoSection: FC<InfoSectionProps> = ({
   opensource,
 }) => {
   return (
-    <section className={styles.info}>
+    <section className={share.section}>
       <div className={styles.basic_info}>
         <img src="profile.jpg" alt="profile" className={styles.profile_image} />
         <div>

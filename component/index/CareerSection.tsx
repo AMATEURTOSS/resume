@@ -5,7 +5,7 @@ import type { Career } from "../../pages/api/career";
 
 const CareerSection: FC<{ career: Career }> = ({ career }) => {
   return (
-    <section>
+    <section className={share.section}>
       <h2>경력</h2>
       {career
         .slice(0)
