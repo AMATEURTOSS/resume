@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import styles from "../../styles/component/index/BasicInfoSection.module.css";
+import styles from "../../styles/component/index/InfoSection.module.css";
 import type { WhoAmI } from "../../pages/api/whoami";
 import type { TechStack } from "../../pages/api/techstack";
 import { OpenSource, Project } from "../../pages/api/opensource";

@@ -5,7 +5,7 @@ import { getData as educationGetData } from "./api/education";
 import { getData as opensourceGetData } from "./api/opensource";
 
 import HelloSection from "../component/index/HelloSection";
-import BasicInfoSection from "../component/index/BasicInfoSection";
+import BasicInfoSection from "../component/index/InfoSection";
 import CareerSection from "../component/index/CareerSection";
 import EducationSection from "../component/index/EducationSection";
 
