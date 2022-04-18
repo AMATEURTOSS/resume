@@ -48,6 +48,10 @@ const Home: NextPage<Props> = (info) => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://resume.amateurtoss.info" />
         <meta property="og:image" content="/profile2.jpg" />
+        <meta
+          property="og:description"
+          content="안녕하세요! 웹 개발자 최영진입니다."
+        />
         <meta name="theme-color" content="#6495ED" />
       </Head>
       <Header />
