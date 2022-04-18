@@ -39,6 +39,16 @@ const Banner: FC<BannerProps> = ({ whoami, projectCount, opensourceCount }) => {
                   <span>오픈소스 기여</span>
                 </li>
               </ul>
+              <div className={styles.contact}>
+                <div>
+                  <i className={`ri-phone-line ${styles.icon}`} />
+                  {whoami.phone}
+                </div>
+                <div>
+                  <i className={`ri-mail-line ${styles.icon}`} />
+                  {whoami.email}
+                </div>
+              </div>
             </section>
           </div>
         </div>
