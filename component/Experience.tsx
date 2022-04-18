@@ -16,7 +16,7 @@ const Experience: FC<ExperienceProps> = ({ career }) => {
           {career.map((company, idx) => {
             const enter = new Date(company.enteringDate).getFullYear();
             const out = company.resignationDate
-              ? new Date(company.enteringDate).getFullYear()
+              ? new Date(company.resignationDate).getFullYear()
               : "재직 중";
             return (
               <div

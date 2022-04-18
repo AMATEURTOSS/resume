@@ -19,7 +19,7 @@ const Education: FC<EducationProps> = ({ edu }) => {
             .map((school, idx) => {
               const enter = new Date(school.admissionDate).getFullYear();
               const out = school.graduationDate
-                ? new Date(school.admissionDate).getFullYear()
+                ? new Date(school.graduationDate).getFullYear()
                 : "재학 중";
               return (
                 <div
