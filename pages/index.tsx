@@ -47,7 +47,7 @@ const Home: NextPage<Props> = (info) => {
       <About />
       <Skills techStack={techStack} />
       <Experience career={career} />
-      <Projects />
+      <Projects projects={projects} />
       <Footer />
     </>
   );

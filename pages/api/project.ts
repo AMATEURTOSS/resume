@@ -58,7 +58,7 @@ export const getData = async (): Promise<Projects> => {
       techStack: ["reactjs", "nestjs", "postgres"],
       describe:
         "온라인 실시간 탁구 게임채팅, Dm, 친구 추가/삭제, 전적 등의 서비스를 제공하는 웹 어플리케이션입니다.",
-      image: ["/project/pong_pong_website/1.png"],
+      image: ["/project/pong_pong_website/1.gif"],
     },
     {
       name: "ft_irc",

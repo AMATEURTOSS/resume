@@ -12,6 +12,9 @@
   padding-top: 20px;
   padding-right: 120px;
 }
+.list figure {
+  height: 300px;
+}
 .title {
   color: #000;
   font-size: 30px;
