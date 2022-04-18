@@ -17,11 +17,11 @@ const About: FC = () => {
             vulputate. Curabitur et vehicula nisl, eu congue dolor. Vivamus nec
             hendrerit mi Nulla consequat tempor.
           </p>
-          <div className={`${styles.buttonSec} text-center`}>
-            <a href="#" className={share.button}>
-              Download Resume
-            </a>
-          </div>
+          {/*<div className={`${styles.buttonSec} text-center`}>*/}
+          {/*  <a href="#" className={share.button}>*/}
+          {/*    Download Resume*/}
+          {/*  </a>*/}
+          {/*</div>*/}
         </section>
       </div>
     </div>
