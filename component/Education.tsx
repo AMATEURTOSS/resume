@@ -31,11 +31,9 @@ const Education: FC<EducationProps> = ({ edu }) => {
                       {enter} - {out}
                     </span>
                     <h3 className={styles.name}>{school.name}</h3>
-                    {school.department && (
-                      <span className={styles.department}>
-                        {school.department}
-                      </span>
-                    )}
+                    <span className={styles.department}>
+                      {school.department ?? "N/A"}
+                    </span>
                     <p>{school.describe}</p>
                   </section>
                 </div>
