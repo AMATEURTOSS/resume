@@ -23,17 +23,29 @@ const Header: FC = () => {
           </a>
           <ul className={styles.social}>
             <li>
-              <a href="#" target="_blank">
+              <a
+                href="https://github.com/AMATEURTOSS"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="ri-github-fill" />
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
-                <i className="ri-stack-overflow-line" />
+              <a
+                href="https://www.amateurtoss.info/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="ri-pages-line" />
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/%EC%98%81%EC%A7%84-%EC%B5%9C-588655229/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="ri-linkedin-fill" />
               </a>
             </li>
