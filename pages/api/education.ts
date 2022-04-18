@@ -9,10 +9,10 @@ interface School {
   describe: string | undefined;
 }
 
-export type Education = Array<School>;
+export type Schools = Array<School>;
 
-export const getData = async (): Promise<Education> => {
-  const edu: Education = [
+export const getData = async (): Promise<Schools> => {
+  const edu: Schools = [
     {
       name: "충훈고등학교",
       type: "고등학교",

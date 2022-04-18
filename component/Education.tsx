@@ -1,10 +1,10 @@
 import { FC } from "react";
 import share from "../styles/share.module.css";
 import styles from "../styles/component/Education.module.css";
-import type { Education } from "../pages/api/education";
+import type { Schools } from "../pages/api/education";
 
 interface EducationProps {
-  edu: Education;
+  edu: Schools;
 }
 
 const Education: FC<EducationProps> = ({ edu }) => {

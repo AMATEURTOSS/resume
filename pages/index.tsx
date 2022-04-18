@@ -8,7 +8,7 @@ import { getData as projectsGetData } from "./api/project";
 import type { NextPage, GetStaticProps } from "next";
 import type { WhoAmI } from "./api/whoami";
 import type { TechStack } from "./api/techstack";
-import type { Education as EduType } from "./api/education";
+import type { Schools } from "./api/education";
 import type { Career } from "./api/career";
 import type { OpenSource } from "./api/opensource";
 import type { Projects as ProjectList } from "./api/project";
@@ -26,7 +26,7 @@ import Footer from "../component/Footer";
 interface Props {
   whoami: WhoAmI;
   techStack: TechStack;
-  edu: EduType;
+  edu: Schools;
   career: Career;
   opensource: OpenSource;
   projects: ProjectList;
@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const whoami: WhoAmI = await whoAmIGetData();
   const techStack: TechStack = await techStackGetData();
   const career: Career = await careerGetData();
-  const edu: EduType = await educationGetData();
+  const edu: Schools = await educationGetData();
   const opensource: OpenSource = await opensourceGetData();
   const projects: ProjectList = await projectsGetData();
   return {
