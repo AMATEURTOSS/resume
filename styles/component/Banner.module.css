@@ -33,7 +33,7 @@
 }
 .numbervalulist strong {
   display: block;
-  color: #f26464;
+  color: #6495ed;
   font-size: 36px;
   font-weight: 800;
 }
@@ -65,7 +65,7 @@
   color: #fff;
   width: 36px;
   height: 36px;
-  background-color: #f26464;
+  background-color: #6495ed;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -47,6 +47,7 @@ const Home: NextPage<Props> = (info) => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://resume.amateurtoss.info" />
         <meta property="og:image" content="/profile2.jpg" />
+        <meta name="theme-color" content="#6495ED" />
       </Head>
       <Header />
       <Banner
