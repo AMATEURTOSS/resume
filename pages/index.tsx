@@ -45,7 +45,7 @@ const Home: NextPage<Props> = (info) => {
         opensourceCount={opensource.length}
       />
       <About />
-      <Skills />
+      <Skills techStack={techStack} />
       <Experience />
       <Projects />
       <Footer />

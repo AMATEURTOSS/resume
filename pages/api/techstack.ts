@@ -1,24 +1,26 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-export type TechStack = Array<string>;
+export type TechStack = {
+  coreStack: Array<string>;
+  otherStack: Array<string>;
+};
 
 export const getData = async (): Promise<TechStack> => {
-  const techStack: TechStack = [
-    "javascript",
-    "typescript",
-    "nodejs",
-    "mariadb",
-    "python",
-    "react",
-    "expressjs",
-    "nestjs",
-    "nextjs",
-    "c",
-    "c++",
-    "docker",
-    "docker compose",
-    "git",
-  ];
+  const techStack: TechStack = {
+    coreStack: [
+      "javascript",
+      "typescript",
+      "nodejs",
+      "mariadb",
+      "react",
+      "expressjs",
+      "nextjs",
+      "docker",
+      "docker compose",
+      "git",
+    ],
+    otherStack: ["c", "c++", "nestjs", "python"],
+  };
   return techStack;
 };
 

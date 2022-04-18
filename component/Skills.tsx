@@ -1,8 +1,13 @@
 import { FC } from "react";
 import share from "../styles/share.module.css";
 import styles from "../styles/component/Skills.module.css";
+import type { TechStack } from "../pages/api/techstack";
 
-const Skills: FC = () => {
+interface SkillsProps {
+  techStack: TechStack;
+}
+
+const Skills: FC<SkillsProps> = ({ techStack }) => {
   return (
     <div className={styles.skillsSection}>
       <div className="container">
@@ -10,25 +15,17 @@ const Skills: FC = () => {
           <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
             <h2 className={share.heading}>Core Skills</h2>
             <ul className={styles.skillsList}>
-              <li>JavaScript</li>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>MongoDB</li>
-              <li>Vue.js</li>
-              <li>React</li>
-              <li>Sequelize</li>
-              <li>Github</li>
-              <li>HTML</li>
+              {techStack.coreStack.map((el, idx) => (
+                <li key={idx}>{el}</li>
+              ))}
             </ul>
           </div>
           <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
             <h2 className={share.heading}>Other Skills</h2>
             <ul className={styles.skillsList}>
-              <li>Storyblok</li>
-              <li>PWAs</li>
-              <li>Responsive Web Design</li>
-              <li>React</li>
-              <li>Vuetify</li>
+              {techStack.otherStack.map((el, idx) => (
+                <li key={idx}>{el}</li>
+              ))}
             </ul>
           </div>
         </div>
