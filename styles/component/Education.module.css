@@ -1,0 +1,80 @@
+.section {
+  padding-bottom: 105px;
+}
+
+.list {
+  padding-top: 15px;
+}
+
+.list section {
+  padding-right: 70px;
+}
+
+.list span {
+  display: block;
+}
+
+.list p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.list ul li {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.list ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  background-color: #373737;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+span.year {
+  color: #373737;
+  font-size: 14px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+span.department {
+  color: #373737;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0;
+  }
+  .list :global(.col-12) {
+    margin-bottom: 40px;
+  }
+  .list section {
+    padding-right: 0;
+  }
+}
