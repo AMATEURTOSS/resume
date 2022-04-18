@@ -100,6 +100,9 @@
     padding-right: 0;
     padding-bottom: 30px;
   }
+  .list figure {
+    height: auto;
+  }
   .detTitle {
     margin-bottom: 7px;
     font-size: 30px;
@@ -122,6 +125,9 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .list section {
     padding-right: 30px;
+  }
+  .list figure {
+    height: auto;
   }
 }
 
