@@ -52,6 +52,11 @@ const Home: NextPage<Props> = (info) => {
           property="og:description"
           content="안녕하세요! 웹 개발자 최영진입니다."
         />
+        <meta name="twitter:image" content="/profile2.jpg" />
+        <meta
+          name="twitter:description"
+          content="안녕하세요! 웹 개발자 최영진입니다."
+        />
         <meta name="theme-color" content="#6495ED" />
       </Head>
       <Header />
