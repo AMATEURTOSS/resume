@@ -6,7 +6,6 @@ export default function Document() {
       <Head>
         {/*Required meta tags*/}
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/*Google Fonts*/}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />

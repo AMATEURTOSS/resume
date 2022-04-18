@@ -38,6 +38,7 @@ const Home: NextPage<Props> = (info) => {
     <>
       <Head>
         <title>{`<yochoi's resume />`}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="안녕하세요! 웹 개발자 최영진입니다."
