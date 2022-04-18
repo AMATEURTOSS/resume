@@ -1,6 +1,7 @@
 .section {
   padding-bottom: 80px;
 }
+
 .list {
   padding-left: 70px;
   padding-top: 40px;
@@ -8,13 +9,20 @@
   background-color: #f6f8fa;
   margin-bottom: 40px;
 }
+
 .list section {
   padding-top: 20px;
   padding-right: 120px;
 }
+
 .list figure {
   height: 300px;
 }
+
+.list img {
+  max-height: 100%;
+}
+
 .title {
   color: #000;
   font-size: 30px;
@@ -22,11 +30,13 @@
   font-weight: 600;
   margin-bottom: 30px;
 }
+
 .list p {
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
 }
+
 .list .button {
   margin-top: 20px;
 }
@@ -35,36 +45,43 @@
   padding-top: 42px;
   padding-bottom: 80px;
 }
+
 .detTitle {
   font-weight: 600;
   color: #000;
   font-size: 48px;
   margin-bottom: 20px;
 }
+
 .detDep {
   display: block;
   font-weight: 600;
   color: #000;
   font-size: 18px;
 }
+
 .contentSec {
   padding: 100px 0;
 }
+
 .contentSec p {
   font-size: 18px;
   line-height: 36px;
   margin-bottom: 30px;
 }
+
 .contentSec h2 {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 30px;
 }
+
 .contentSec ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .contentSec li {
   font-size: 18px;
   line-height: 36px;
@@ -72,6 +89,7 @@
   position: relative;
   margin-bottom: 20px;
 }
+
 .contentSec li:before {
   content: "";
   position: absolute;
@@ -89,31 +107,39 @@
     padding-right: 10px;
     padding-bottom: 0;
   }
+
   .list {
     padding: 30px;
   }
+
   .list p {
     font-size: 15px;
     line-height: 30px;
   }
+
   .list section {
     padding-right: 0;
     padding-bottom: 30px;
   }
+
   .list figure {
     height: auto;
   }
+
   .detTitle {
     margin-bottom: 7px;
     font-size: 30px;
     line-height: 40px;
   }
+
   .contentSec {
     padding: 30px 0;
   }
+
   .contentSec h2 {
     font-size: 20px;
   }
+
   .contentSec p,
   .contentSec li {
     font-size: 15px;
@@ -126,8 +152,9 @@
   .list section {
     padding-right: 30px;
   }
+
   .list figure {
-    height: auto;
+    height: 300px;
   }
 }
 
