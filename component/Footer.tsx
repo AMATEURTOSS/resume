@@ -8,7 +8,7 @@ const Footer: FC = () => {
       <div className="container">
         <section>
           <span>Stay in touch</span>
-          <h4>이야기를 하고싶으신가요?</h4>
+          <h4>연락 기다리겠습니다</h4>
           <p>언제든지 연락주세요</p>
           <a
             href="mailto:amateur.toss@gmail.com"
