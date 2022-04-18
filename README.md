@@ -7,7 +7,3 @@
 * nextjs
 * vercel
 * bootstrap5
-
-## preview
-
-<iframe src="https://resume.amateurtoss.info"></iframe>
