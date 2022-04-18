@@ -10,7 +10,7 @@ interface BannerProps {
 
 const Banner: FC<BannerProps> = ({ whoami, projectCount, opensourceCount }) => {
   return (
-    <div className={styles.banner} style={{ marginTop: "180px" }}>
+    <div className={styles.banner}>
       <div className="container">
         <div className="row">
           <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
