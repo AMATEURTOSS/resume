@@ -1,6 +1,8 @@
 # My resume
 
-<a href="https://resume.amateurtoss.info">https://resume.amateurtoss.info </a>
+<a href="https://resume.amateurtoss.info" target="_blank" rel="noreferrer">
+    https://resume.amateurtoss.info
+</a>
 
 ## build with
 
