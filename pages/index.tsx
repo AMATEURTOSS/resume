@@ -3,6 +3,7 @@ import { getData as techStackGetData } from "./api/techstack";
 import { getData as careerGetData } from "./api/career";
 import { getData as educationGetData } from "./api/education";
 import { getData as opensourceGetData } from "./api/opensource";
+import { getData as projectsGetData } from "./api/project";
 
 import type { NextPage, GetStaticProps } from "next";
 import type { WhoAmI } from "./api/whoami";
@@ -10,6 +11,7 @@ import type { TechStack } from "./api/techstack";
 import type { Education } from "./api/education";
 import type { Career } from "./api/career";
 import type { OpenSource } from "./api/opensource";
+import type { Projects as ProjectList } from "./api/project";
 import Head from "next/head";
 
 import Header from "../component/Header";
@@ -26,17 +28,22 @@ interface Props {
   edu: Education;
   career: Career;
   opensource: OpenSource;
+  projects: ProjectList;
 }
 
 const Home: NextPage<Props> = (info) => {
-  const { whoami, techStack, edu, career, opensource } = info;
+  const { whoami, techStack, edu, career, opensource, projects } = info;
   return (
     <>
       <Head>
         <title>{`<yochoi's resume />`}</title>
       </Head>
       <Header />
-      <Banner />
+      <Banner
+        whoami={whoami}
+        projectCount={projects.length}
+        opensourceCount={opensource.length}
+      />
       <About />
       <Skills />
       <Experience />
@@ -52,6 +59,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const career: Career = await careerGetData();
   const edu: Education = await educationGetData();
   const opensource: OpenSource = await opensourceGetData();
+  const projects: ProjectList = await projectsGetData();
   return {
     props: JSON.parse(
       JSON.stringify({
@@ -60,6 +68,7 @@ export const getStaticProps: GetStaticProps = async () => {
         edu,
         career,
         opensource,
+        projects,
       })
     ),
   };
