@@ -7,6 +7,7 @@ export interface Project {
   issueURL: string | undefined; // Issue URL
   prURL: string | undefined; // Pull Request URL
   logo: string;
+  describe: string;
 }
 
 export type OpenSource = Array<Project>;
@@ -21,6 +22,8 @@ export const getData = async (): Promise<OpenSource> => {
       prURL:
         "https://github.com/tldr-pages/tldr/pulls?q=is%3Aissue+is%3Apr+author%3AAMATEURTOSS+",
       logo: "/opensource/tldr.png",
+      describe:
+        "tldr 프로젝트는 기존 매뉴얼 페이지 보다 더 간단하고 접근하기 쉬운 명령줄 도구 도움말 페이지 모음입니다.",
     },
   ];
   return openSource;

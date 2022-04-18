@@ -22,6 +22,7 @@ import Education from "../component/Education";
 import Experience from "../component/Experience";
 import Projects from "../component/Projects";
 import Footer from "../component/Footer";
+import Opensources from "../component/Opensources";
 
 interface Props {
   whoami: WhoAmI;
@@ -69,6 +70,7 @@ const Home: NextPage<Props> = (info) => {
       <Skills techStack={techStack} />
       <Experience career={career} />
       <Education edu={edu} />
+      <Opensources opensources={opensource} />
       <Projects projects={projects} />
       <Footer />
     </>
