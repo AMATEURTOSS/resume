@@ -1,4 +1,5 @@
 import { FC, useEffect, useRef } from "react";
+import Link from "next/link";
 import styles from "../styles/component/Header.module.css";
 
 const Header: FC = () => {
@@ -18,9 +19,11 @@ const Header: FC = () => {
     <header className={styles.header} id="site-header" ref={header}>
       <div className="container">
         <div className={styles.headerInner}>
-          <a href="index.html" className={styles.logo}>
-            <span>C</span>Choi Young-Jin
-          </a>
+          <Link href="/">
+            <div className={styles.logo}>
+              <span>C</span>Choi Young-Jin
+            </div>
+          </Link>
           <ul className={styles.social}>
             <li>
               <a
