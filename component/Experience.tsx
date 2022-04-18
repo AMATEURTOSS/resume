@@ -9,10 +9,10 @@ interface ExperienceProps {
 
 const Experience: FC<ExperienceProps> = ({ career }) => {
   return (
-    <div className={styles.experienceSection}>
+    <div className={styles.section}>
       <div className="container">
         <h2 className={share.heading}>Work Experience</h2>
-        <div className={`row ${styles.experienceList}`}>
+        <div className={`row ${styles.list}`}>
           {career.map((company, idx) => {
             const enter = new Date(company.enteringDate).getFullYear();
             const out = company.resignationDate
