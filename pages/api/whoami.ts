@@ -32,7 +32,7 @@ async function getOpensourceCount() {
 }
 
 export const getData = async (): Promise<i18nType<WhoAmI>> => {
-  const projectCount = (await projectGetData()).length;
+  const projectCount = (await projectGetData()).kr.length;
   const opensourceCount = await getOpensourceCount();
   const currierStart = new Date("2022-02-21");
   const today = new Date();
