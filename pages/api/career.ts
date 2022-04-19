@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { i18nType } from "../../i18nType";
 
 interface Company {
   name: string; // 회사 이름
@@ -12,21 +13,37 @@ interface Company {
 
 export type Career = Array<Company>;
 
-export const getData = async (): Promise<Career> => {
-  const career: Career = [
-    {
-      name: "f1security",
-      department: "악성코드대응사업부",
-      position: "주임",
-      describe: `f1 security 주력 사업 중 하나인, "내pc돌보미" 사업의 웹사이트를 개발하는 업무를 진행했습니다.`,
-      enteringDate: "2022-02-21",
-      resignationDate: undefined,
-      projects: [
-        "내pc돌보미 단체 예약 프론트 구현",
-        "내pc돌보미 학부모 동의 api 및 프론트 구현",
-      ],
-    },
-  ];
+export const getData = async (): Promise<i18nType<Career>> => {
+  const career: i18nType<Career> = {
+    kr: [
+      {
+        name: "(주)에프원시큐리티",
+        department: "악성코드대응사업부",
+        position: "주임",
+        describe: `에프원시큐리티와 한국인터넷진흥원이 함께 진행한 "내pc돌보미" 사업의 웹사이트를 개발하는 업무를 진행했습니다.`,
+        enteringDate: "2022-02-21",
+        resignationDate: undefined,
+        projects: [
+          '"내pc돌보미" 단체 예약 페이지 UI 구현',
+          '"내pc돌보미" 만 14세 미만 학생용 학부모 동의 페이지 백엔드 서버 및 UI 구현',
+        ],
+      },
+    ],
+    "en-US": [
+      {
+        name: "F1 Security",
+        department: "Malicious code response business department",
+        position: "Senior staff",
+        describe: `I developed a website for the "My PC Care" project jointly conducted by F1 Security and the Korea Internet & Security Agency.`,
+        enteringDate: "2022-02-21",
+        resignationDate: undefined,
+        projects: [
+          "Implementation of the group reservation page UI",
+          "Implementation of the back-end server and UI of the parent consent page for students under the age of 14",
+        ],
+      },
+    ],
+  };
   return career;
 };
 
