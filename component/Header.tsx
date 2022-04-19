@@ -74,7 +74,7 @@ const Header: FC = () => {
                 }}
               >
                 <option value="kr">한국어</option>
-                <option value="en-US">English (US)</option>
+                <option value="en-US">English</option>
               </select>
             </li>
           </ul>
