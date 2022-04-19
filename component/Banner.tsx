@@ -20,7 +20,7 @@ const Banner: FC<BannerProps> = ({ whoami }) => {
             <section>
               <h1>
                 <span>안녕하세요!</span>
-                저는 구로에 사는
+                끈기있는
                 <br />웹 개발자 {whoami.name}입니다.
               </h1>
               <ul className={styles.numbervalulist}>
