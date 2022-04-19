@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { i18nType } from "../../i18nType";
 
 interface School {
   name: string; // 학교 이름
@@ -11,25 +12,45 @@ interface School {
 
 export type Schools = Array<School>;
 
-export const getData = async (): Promise<Schools> => {
-  const edu: Schools = [
-    {
-      name: "충훈고등학교",
-      type: "고등학교",
-      department: "문과",
-      admissionDate: "2017-03-02",
-      graduationDate: "2020-01-07",
-      describe: "공립 인문계 고등학교",
-    },
-    {
-      name: "42Seoul",
-      type: "비학위 과정",
-      department: undefined,
-      admissionDate: "2020-02-24",
-      graduationDate: undefined,
-      describe: `PBL(Project Base Learning)과 동료학습(Peer Learning) 기반의 소프트웨어 인재 양성 프로그램`,
-    },
-  ];
+export const getData = async (): Promise<i18nType<Schools>> => {
+  const edu: i18nType<Schools> = {
+    kr: [
+      {
+        name: "충훈고등학교",
+        type: "고등학교",
+        department: "문과",
+        admissionDate: "2017-03-02",
+        graduationDate: "2020-01-07",
+        describe: "공립 인문계 고등학교",
+      },
+      {
+        name: "42Seoul",
+        type: "비학위 과정",
+        department: undefined,
+        admissionDate: "2020-02-24",
+        graduationDate: undefined,
+        describe: `과학기술정보통신부에서 주관하는 PBL(Project Base Learning)과 동료학습(Peer Learning) 기반의 소프트웨어 인재 양성 프로그램`,
+      },
+    ],
+    "en-US": [
+      {
+        name: "Chunghun High School",
+        type: "High School",
+        department: "literature",
+        admissionDate: "2017-03-02",
+        graduationDate: "2020-01-07",
+        describe: "A public liberal arts High School",
+      },
+      {
+        name: "42Seoul",
+        type: "Non-degree",
+        department: undefined,
+        admissionDate: "2020-02-24",
+        graduationDate: undefined,
+        describe: `Project Base Learning (PBL) and Peer Learning-based software talent training programs`,
+      },
+    ],
+  };
   return edu;
 };
 
