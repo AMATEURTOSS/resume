@@ -8,7 +8,7 @@ export const text: i18n<any> = {
     "meta.describe": "안녕하세요! 웹 개발자 최영진입니다.",
     "banner.hi": "안녕하세요!",
     "banner.adjective": "끈기있는",
-    "banner.intro": (name: string) => `웹 개발자 ${name}입니다.`,
+    "banner.intro": (name: string) => <>웹 개발자 {name}입니다.</>,
     "banner.year": "년차",
     "banner.project": "개인 프로젝트",
     "banner.opensource": "오픈소스 기여",
@@ -19,10 +19,15 @@ export const text: i18n<any> = {
     "footer.button": "연락하기",
   },
   "en-US": {
-    "meta.describe": "Hello! I'm Young-Jin Choi, the web developer.",
+    "meta.describe": "Hello! I'm Young-Jin Choi, the Web Developer.",
     "banner.hi": "hello!",
     "banner.adjective": "I'm Persistent",
-    "banner.intro": (name: string) => `web developer, ${name}.`,
+    "banner.intro": (name: string) => (
+      <>
+        Web Developer, <br />
+        {name}.
+      </>
+    ),
     "banner.year": "year",
     "banner.project": "project",
     "banner.opensource": "opensource",
