@@ -16,9 +16,9 @@ export interface WhoAmI {
 
 async function getOpensourceCount() {
   let total = 0;
-  const opensource = await opensourceGetData();
+  const opensource = (await opensourceGetData()).kr;
   await Promise.all(
-    opensource.map(async (project, idx) => {
+    opensource.map(async (project) => {
       const split = project.url.split("/");
       const owner = split.at(-2);
       const repo = split.at(-1);
