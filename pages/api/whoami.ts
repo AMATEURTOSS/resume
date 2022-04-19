@@ -20,8 +20,8 @@ async function getOpensourceCount() {
   await Promise.all(
     opensource.map(async (project) => {
       const split = project.url.split("/");
-      const owner = split.at(-2);
-      const repo = split.at(-1);
+      const owner = split[split.length - 2];
+      const repo = split[split.length - 1];
       const result = await axios.get(
         `https://api.github.com/search/issues?q=author%3A${"AMATEURTOSS"}+type%3Apr+repo%3A${owner}/${repo}`
       );
