@@ -61,11 +61,7 @@ const Home: NextPage<Props> = (info) => {
         <meta name="theme-color" content="#6495ED" />
       </Head>
       <Header />
-      <Banner
-        whoami={whoami}
-        projectCount={projects.length}
-        opensourceCount={opensource.length}
-      />
+      <Banner whoami={whoami} />
       <About />
       <Skills techStack={techStack} />
       <Experience career={career} />

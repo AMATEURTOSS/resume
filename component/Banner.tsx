@@ -4,11 +4,9 @@ import type { WhoAmI } from "../pages/api/whoami";
 
 interface BannerProps {
   whoami: WhoAmI;
-  projectCount: number;
-  opensourceCount: number;
 }
 
-const Banner: FC<BannerProps> = ({ whoami, projectCount, opensourceCount }) => {
+const Banner: FC<BannerProps> = ({ whoami }) => {
   return (
     <div className={styles.banner}>
       <div className="container">
@@ -31,11 +29,11 @@ const Banner: FC<BannerProps> = ({ whoami, projectCount, opensourceCount }) => {
                   <span>년차</span>
                 </li>
                 <li>
-                  <strong>{projectCount}+</strong>
+                  <strong>{whoami.projectCount}+</strong>
                   <span>개인 프로젝트</span>
                 </li>
                 <li>
-                  <strong>{opensourceCount}</strong>
+                  <strong>{whoami.opensourceCount}+</strong>
                   <span>오픈소스 기여</span>
                 </li>
               </ul>
