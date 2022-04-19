@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { i18nType } from "../../i18nType";
+import { i18n } from "../../i18n";
 
 interface Project {
   name: string;
@@ -14,8 +14,8 @@ interface Project {
 
 export type Projects = Array<Project>;
 
-export const getData = async (): Promise<i18nType<Projects>> => {
-  const projects: i18nType<Projects> = {
+export const getData = async (): Promise<i18n<Projects>> => {
+  const projects: i18n<Projects> = {
     kr: [
       {
         name: "ft_linear_regression",

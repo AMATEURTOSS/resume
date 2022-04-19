@@ -2,7 +2,7 @@ import axios from "axios";
 import { getData as projectGetData } from "./project";
 import { getData as opensourceGetData } from "./opensource";
 import type { NextApiRequest, NextApiResponse } from "next";
-import type { i18nType } from "../../i18nType";
+import type { i18n } from "../../i18n";
 
 export interface WhoAmI {
   name: string;
@@ -31,12 +31,12 @@ async function getOpensourceCount() {
   return total;
 }
 
-export const getData = async (): Promise<i18nType<WhoAmI>> => {
+export const getData = async (): Promise<i18n<WhoAmI>> => {
   const projectCount = (await projectGetData()).kr.length;
   const opensourceCount = await getOpensourceCount();
   const currierStart = new Date("2022-02-21");
   const today = new Date();
-  const whoAmI: i18nType<WhoAmI> = {
+  const whoAmI: i18n<WhoAmI> = {
     kr: {
       name: "최영진",
       email: "amateur.toss@gmail.com",
@@ -69,7 +69,7 @@ export const getData = async (): Promise<i18nType<WhoAmI>> => {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<i18nType<WhoAmI>>
+  res: NextApiResponse<i18n<WhoAmI>>
 ) {
   const whoAmI = await getData();
   res.status(200).json(whoAmI);

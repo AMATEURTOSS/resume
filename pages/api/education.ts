@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { i18nType } from "../../i18nType";
+import { i18n } from "../../i18n";
 
 interface School {
   name: string; // 학교 이름
@@ -12,8 +12,8 @@ interface School {
 
 export type Schools = Array<School>;
 
-export const getData = async (): Promise<i18nType<Schools>> => {
-  const edu: i18nType<Schools> = {
+export const getData = async (): Promise<i18n<Schools>> => {
+  const edu: i18n<Schools> = {
     kr: [
       {
         name: "충훈고등학교",

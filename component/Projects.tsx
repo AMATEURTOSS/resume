@@ -2,18 +2,23 @@ import { FC } from "react";
 import share from "../styles/share.module.css";
 import styles from "../styles/component/Projects.module.css";
 import { Projects } from "../pages/api/project";
+import { useRouter } from "next/router";
+import { i18n } from "../i18n";
 
 interface ProjectsProps {
-  projects: Projects;
+  projects: i18n<Projects>;
 }
 
 const Projects: FC<ProjectsProps> = ({ projects }) => {
+  const { locale } = useRouter();
+  const _locale = locale !== "kr" && locale !== "en-US" ? "kr" : locale;
+
   return (
     <div className={styles.section}>
       <div className="container">
         <h2 className={share.heading}>Personal Projects</h2>
         <div className={styles.listSection}>
-          {projects.slice(0, 3).map((project, idx) => {
+          {projects[_locale].slice(0, 3).map((project, idx) => {
             const img = project.image[0] ?? "";
             return (
               <div className={styles.list} key={idx}>

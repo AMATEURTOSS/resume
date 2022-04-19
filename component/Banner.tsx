@@ -1,12 +1,17 @@
 import { FC } from "react";
 import styles from "../styles/component/Banner.module.css";
 import type { WhoAmI } from "../pages/api/whoami";
+import { i18n, text } from "../i18n";
+import { useRouter } from "next/router";
 
 interface BannerProps {
-  whoami: WhoAmI;
+  whoami: i18n<WhoAmI>;
 }
 
 const Banner: FC<BannerProps> = ({ whoami }) => {
+  const { locale } = useRouter();
+  const _locale = locale !== "kr" && locale !== "en-US" ? "kr" : locale;
+
   return (
     <div className={styles.banner}>
       <div className="container">
@@ -19,32 +24,35 @@ const Banner: FC<BannerProps> = ({ whoami }) => {
           <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
             <section>
               <h1>
-                <span>안녕하세요!</span>
-                끈기있는
-                <br />웹 개발자 {whoami.name}입니다.
+                <span>{text[_locale]["banner.hi"]}</span>
+                {text[_locale]["banner.adjective"]}
+                <br />
+                {text[_locale]["banner.intro"](whoami[_locale].name)}
               </h1>
               <ul className={styles.numbervalulist}>
                 <li>
-                  <strong>{whoami.year}</strong>
-                  <span>년차</span>
+                  <strong>
+                    {whoami[(locale as "kr" | "en-US") ?? "kr"].year}
+                  </strong>
+                  <span>{text[_locale]["banner.year"]}</span>
                 </li>
                 <li>
-                  <strong>{whoami.projectCount}+</strong>
-                  <span>개인 프로젝트</span>
+                  <strong>{whoami[_locale].projectCount}+</strong>
+                  <span>{text[_locale]["banner.project"]}</span>
                 </li>
                 <li>
-                  <strong>{whoami.opensourceCount}+</strong>
-                  <span>오픈소스 기여</span>
+                  <strong>{whoami[_locale].opensourceCount}+</strong>
+                  <span>{text[_locale]["banner.opensource"]}</span>
                 </li>
               </ul>
               <div className={styles.contact}>
                 <div>
                   <i className={`ri-phone-line ${styles.icon}`} />
-                  {whoami.phone}
+                  {whoami[_locale].phone}
                 </div>
                 <div>
                   <i className={`ri-mail-line ${styles.icon}`} />
-                  {whoami.email}
+                  {whoami[_locale].email}
                 </div>
               </div>
             </section>

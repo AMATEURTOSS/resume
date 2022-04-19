@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { i18nType } from "../../i18nType";
+import { i18n } from "../../i18n";
 
 export type TechStack = {
   coreStack: Array<string>;
   otherStack: Array<string>;
 };
 
-export const getData = async (): Promise<i18nType<TechStack>> => {
-  const techStack: i18nType<TechStack> = {
+export const getData = async (): Promise<i18n<TechStack>> => {
+  const techStack: i18n<TechStack> = {
     kr: {
       coreStack: [
         "javascript",

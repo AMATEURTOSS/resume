@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { i18nType } from "../../i18nType";
+import { i18n } from "../../i18n";
 
 interface Company {
   name: string; // 회사 이름
@@ -13,8 +13,8 @@ interface Company {
 
 export type Career = Array<Company>;
 
-export const getData = async (): Promise<i18nType<Career>> => {
-  const career: i18nType<Career> = {
+export const getData = async (): Promise<i18n<Career>> => {
+  const career: i18n<Career> = {
     kr: [
       {
         name: "(주)에프원시큐리티",

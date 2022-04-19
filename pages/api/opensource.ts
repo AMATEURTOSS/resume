@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { i18nType } from "../../i18nType";
+import { i18n } from "../../i18n";
 
 export interface Project {
   name: string;
@@ -13,8 +13,8 @@ export interface Project {
 
 export type OpenSource = Array<Project>;
 
-export const getData = async (): Promise<i18nType<OpenSource>> => {
-  const openSource: i18nType<OpenSource> = {
+export const getData = async (): Promise<i18n<OpenSource>> => {
+  const openSource: i18n<OpenSource> = {
     kr: [
       {
         name: "tldr",

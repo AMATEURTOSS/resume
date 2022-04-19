@@ -4,6 +4,7 @@ import { getData as careerGetData } from "./api/career";
 import { getData as educationGetData } from "./api/education";
 import { getData as opensourceGetData } from "./api/opensource";
 import { getData as projectsGetData } from "./api/project";
+import { i18n, text } from "../i18n";
 
 import type { NextPage, GetStaticProps } from "next";
 import type { WhoAmI } from "./api/whoami";
@@ -23,27 +24,28 @@ import Experience from "../component/Experience";
 import Projects from "../component/Projects";
 import Footer from "../component/Footer";
 import Opensources from "../component/Opensources";
+import { useRouter } from "next/router";
 
 interface Props {
-  whoami: WhoAmI;
-  techStack: TechStack;
-  edu: Schools;
-  career: Career;
-  opensource: OpenSource;
-  projects: ProjectList;
+  whoami: i18n<WhoAmI>;
+  techStack: i18n<TechStack>;
+  edu: i18n<Schools>;
+  career: i18n<Career>;
+  opensource: i18n<OpenSource>;
+  projects: i18n<ProjectList>;
 }
 
 const Home: NextPage<Props> = (info) => {
   const { whoami, techStack, edu, career, opensource, projects } = info;
+  const { locale } = useRouter();
+  const _locale = locale !== "kr" && locale !== "en-US" ? "kr" : locale;
+
   return (
     <>
       <Head>
         <title>{`<yochoi's resume />`}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="description"
-          content="안녕하세요! 웹 개발자 최영진입니다."
-        />
+        <meta name="description" content={text[_locale]["meta.describe"]} />
         <meta name="robots" content="noindex, nofollow" />
         <meta property="og:title" content="<yochoi's resume />" />
         <meta property="og:type" content="website" />
@@ -51,12 +53,12 @@ const Home: NextPage<Props> = (info) => {
         <meta property="og:image" content="/profile2.jpg" />
         <meta
           property="og:description"
-          content="안녕하세요! 웹 개발자 최영진입니다."
+          content={text[_locale]["meta.describe"]}
         />
         <meta name="twitter:image" content="/profile2.jpg" />
         <meta
           name="twitter:description"
-          content="안녕하세요! 웹 개발자 최영진입니다."
+          content={text[_locale]["meta.describe"]}
         />
         <meta name="theme-color" content="#6495ED" />
       </Head>
@@ -74,12 +76,12 @@ const Home: NextPage<Props> = (info) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const whoami: WhoAmI = await whoAmIGetData();
-  const techStack: TechStack = await techStackGetData();
-  const career: Career = await careerGetData();
-  const edu: Schools = await educationGetData();
-  const opensource: OpenSource = await opensourceGetData();
-  const projects: ProjectList = await projectsGetData();
+  const whoami: i18n<WhoAmI> = await whoAmIGetData();
+  const techStack: i18n<TechStack> = await techStackGetData();
+  const career: i18n<Career> = await careerGetData();
+  const edu: i18n<Schools> = await educationGetData();
+  const opensource: i18n<OpenSource> = await opensourceGetData();
+  const projects: i18n<ProjectList> = await projectsGetData();
   return {
     props: JSON.parse(
       JSON.stringify({

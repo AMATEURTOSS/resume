@@ -2,22 +2,27 @@ import { FC } from "react";
 import share from "../styles/share.module.css";
 import styles from "../styles/component/Experience.module.css";
 import type { Career } from "../pages/api/career";
+import { useRouter } from "next/router";
+import { i18n, text } from "../i18n";
 
 interface ExperienceProps {
-  career: Career;
+  career: i18n<Career>;
 }
 
 const Experience: FC<ExperienceProps> = ({ career }) => {
+  const { locale } = useRouter();
+  const _locale = locale !== "kr" && locale !== "en-US" ? "kr" : locale;
+
   return (
     <div className={styles.section}>
       <div className="container">
         <h2 className={share.heading}>Work Experience</h2>
         <div className={`row ${styles.list}`}>
-          {career.map((company, idx) => {
+          {career[_locale].map((company, idx) => {
             const enter = new Date(company.enteringDate).getFullYear();
             const out = company.resignationDate
               ? new Date(company.resignationDate).getFullYear()
-              : "재직 중";
+              : text[_locale]["experience.current"];
             return (
               <div
                 className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6"
