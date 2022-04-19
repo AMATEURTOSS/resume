@@ -1,9 +1,21 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "../styles/component/Header.module.css";
+import { useRouter } from "next/router";
 
 const Header: FC = () => {
   const header = useRef<HTMLElement>(null);
+
+  const router = useRouter();
+  let _locale =
+    router.locale !== "kr" && router.locale !== "en-US" ? "kr" : router.locale;
+
+  useEffect(() => {
+    _locale =
+      router.locale !== "kr" && router.locale !== "en-US"
+        ? "kr"
+        : router.locale;
+  }, [router.locale]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -51,6 +63,19 @@ const Header: FC = () => {
               >
                 <i className="ri-linkedin-fill" />
               </a>
+            </li>
+            <li>
+              <select
+                className="form-select"
+                value={_locale}
+                onChange={(e) => {
+                  if (e.target.value === "kr") location.href = "/";
+                  else if (e.target.value === "en-US") location.href = "/en-US";
+                }}
+              >
+                <option value="kr">한국어</option>
+                <option value="en-US">English (US)</option>
+              </select>
             </li>
           </ul>
         </div>
