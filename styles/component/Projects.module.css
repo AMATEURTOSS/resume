@@ -29,6 +29,7 @@
   line-height: 36px;
   font-weight: 600;
   margin-bottom: 30px;
+  text-wrap: wrap;
 }
 
 .list p {
@@ -124,6 +125,10 @@
 
   .list figure {
     height: auto;
+  }
+
+  .title {
+    font-size: 25px;
   }
 
   .detTitle {
