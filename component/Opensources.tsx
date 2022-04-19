@@ -25,12 +25,19 @@ const Projects: FC<ProjectsProps> = ({ opensources }) => {
                   <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
                     <section>
                       <h3 className={styles.title}>{os.name}</h3>
+                      <ul className={styles.contributeTypeList}>
+                        {os.labels.map((label, idx) => {
+                          return (
+                            <li
+                              key={idx}
+                              style={{ backgroundColor: `#${label.color}` }}
+                            >
+                              {label.name}
+                            </li>
+                          );
+                        })}{" "}
+                      </ul>
                       <p>{os.describe}</p>
-                      {/*<ul className={styles.contributeTypeList}>*/}
-                      {/*  {os.contributeType.map((type, idx) => {*/}
-                      {/*    return <li key={idx}>{type}</li>;*/}
-                      {/*  })}{" "}*/}
-                      {/*</ul>*/}
                       <a
                         href={os.prURL}
                         className={share.button}
