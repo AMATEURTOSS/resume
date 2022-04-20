@@ -86,3 +86,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+@media print {
+  * {
+    /* print background graphics force */
+    /* https://stackoverflow.com/questions/6670151/how-can-i-force-browsers-to-print-background-images-in-css */
+    -webkit-print-color-adjust: exact !important; /* Chrome, Safari, Edge */
+    color-adjust: exact !important; /*Firefox*/
+  }
+}
