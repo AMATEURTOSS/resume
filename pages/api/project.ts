@@ -16,7 +16,7 @@ export type Projects = Array<Project>;
 
 export const getData = async (): Promise<i18n<Projects>> => {
   const projects: i18n<Projects> = {
-    kr: [
+    "ko-KR": [
       {
         name: "ft_linear_regression",
         githubURL: "https://github.com/AMATEURTOSS/ft_linear_regression",

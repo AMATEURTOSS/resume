@@ -8,12 +8,14 @@ const Header: FC = () => {
 
   const router = useRouter();
   let _locale =
-    router.locale !== "kr" && router.locale !== "en-US" ? "kr" : router.locale;
+    router.locale !== "ko-KR" && router.locale !== "en-US"
+      ? "ko-KR"
+      : router.locale;
 
   useEffect(() => {
     _locale =
-      router.locale !== "kr" && router.locale !== "en-US"
-        ? "kr"
+      router.locale !== "ko-KR" && router.locale !== "en-US"
+        ? "ko-KR"
         : router.locale;
   }, [router.locale]);
 

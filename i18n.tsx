@@ -1,10 +1,10 @@
 export interface i18n<type> {
-  kr: type;
+  "ko-KR": type;
   "en-US": type;
 }
 
 export const text: i18n<any> = {
-  kr: {
+  "ko-KR": {
     "meta.describe": "안녕하세요! 웹 개발자 최영진입니다.",
     "banner.hi": "안녕하세요!",
     "banner.adjective": "끈기있는",

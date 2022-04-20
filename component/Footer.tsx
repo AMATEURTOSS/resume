@@ -6,7 +6,7 @@ import { text } from "../i18n";
 
 const Footer: FC = () => {
   const { locale } = useRouter();
-  const _locale = locale !== "kr" && locale !== "en-US" ? "kr" : locale;
+  const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   return (
     <footer className={`${styles.footer} text-center`}>

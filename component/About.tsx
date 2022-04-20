@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 const About: FC = () => {
   const { locale } = useRouter();
-  const _locale = locale !== "kr" && locale !== "en-US" ? "kr" : locale;
+  const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   function downloadResume() {
     window.print();

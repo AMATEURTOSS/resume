@@ -42,7 +42,7 @@ async function getOpensourceLabels(owner: string, repo: string) {
 
 export const getData = async (): Promise<i18n<OpenSource>> => {
   const openSource: i18n<OpenSource> = {
-    kr: [
+    "ko-KR": [
       {
         name: "tldr",
         url: "https://github.com/tldr-pages/tldr",

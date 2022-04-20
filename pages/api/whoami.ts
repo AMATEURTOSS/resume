@@ -16,7 +16,7 @@ export interface WhoAmI {
 
 async function getOpensourceCount() {
   let total = 0;
-  const opensource = (await opensourceGetData()).kr;
+  const opensource = (await opensourceGetData())["ko-KR"];
   await Promise.all(
     opensource.map(async (project) => {
       const split = project.url.split("/");
@@ -32,12 +32,12 @@ async function getOpensourceCount() {
 }
 
 export const getData = async (): Promise<i18n<WhoAmI>> => {
-  const projectCount = (await projectGetData()).kr.length;
+  const projectCount = (await projectGetData())["ko-KR"].length;
   const opensourceCount = await getOpensourceCount();
   const currierStart = new Date("2022-02-21");
   const today = new Date();
   const whoAmI: i18n<WhoAmI> = {
-    kr: {
+    "ko-KR": {
       name: "최영진",
       email: "amateur.toss@gmail.com",
       phone: "01092124699",

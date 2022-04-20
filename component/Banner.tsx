@@ -10,7 +10,7 @@ interface BannerProps {
 
 const Banner: FC<BannerProps> = ({ whoami }) => {
   const { locale } = useRouter();
-  const _locale = locale !== "kr" && locale !== "en-US" ? "kr" : locale;
+  const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   return (
     <div className={styles.banner}>
@@ -31,9 +31,7 @@ const Banner: FC<BannerProps> = ({ whoami }) => {
               </h1>
               <ul className={styles.numbervalulist}>
                 <li>
-                  <strong>
-                    {whoami[(locale as "kr" | "en-US") ?? "kr"].year}
-                  </strong>
+                  <strong>{whoami[_locale].year}</strong>
                   <span>{text[_locale]["banner.year"]}</span>
                 </li>
                 <li>

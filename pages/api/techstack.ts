@@ -8,7 +8,7 @@ export type TechStack = {
 
 export const getData = async (): Promise<i18n<TechStack>> => {
   const techStack: i18n<TechStack> = {
-    kr: {
+    "ko-KR": {
       coreStack: [
         "javascript",
         "typescript",

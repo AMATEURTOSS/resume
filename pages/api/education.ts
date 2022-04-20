@@ -14,7 +14,7 @@ export type Schools = Array<School>;
 
 export const getData = async (): Promise<i18n<Schools>> => {
   const edu: i18n<Schools> = {
-    kr: [
+    "ko-KR": [
       {
         name: "충훈고등학교",
         type: "고등학교",

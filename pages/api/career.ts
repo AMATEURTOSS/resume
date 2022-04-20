@@ -15,7 +15,7 @@ export type Career = Array<Company>;
 
 export const getData = async (): Promise<i18n<Career>> => {
   const career: i18n<Career> = {
-    kr: [
+    "ko-KR": [
       {
         name: "(주)에프원시큐리티",
         department: "악성코드대응사업부",

@@ -38,7 +38,7 @@ interface ProjectsProps {
 
 const Projects: FC<ProjectsProps> = ({ projects }) => {
   const { locale } = useRouter();
-  const _locale = locale !== "kr" && locale !== "en-US" ? "kr" : locale;
+  const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   return (
     <div className={styles.section}>
