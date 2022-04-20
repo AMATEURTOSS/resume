@@ -45,7 +45,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
       <div className="container">
         <h2 className={share.heading}>Personal Projects</h2>
         <div className={styles.listSection}>
-          {projects[_locale].slice(0, 3).map((project, idx) => {
+          {projects[_locale].slice(0, 4).map((project, idx) => {
             const img = project.image[0] ?? "";
             return (
               <div className={styles.list} key={idx}>
