@@ -75,7 +75,7 @@ const Header: FC = () => {
                   else if (e.target.value === "en-US") location.href = "/en-US";
                 }}
               >
-                <option value="kr">한국어</option>
+                <option value="ko-KR">한국어</option>
                 <option value="en-US">English</option>
               </select>
             </li>
