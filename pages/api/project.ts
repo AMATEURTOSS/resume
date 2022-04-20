@@ -6,7 +6,7 @@ interface Project {
   githubURL: string | undefined; // 프로젝트 github url
   url: string | undefined; // 프로젝트 url (서비스중인 경우)
   start: Date;
-  end: Date | undefined;
+  end: Date;
   techStack: Array<string>;
   describe: string | undefined;
   image: Array<string>;

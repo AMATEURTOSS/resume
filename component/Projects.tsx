@@ -47,11 +47,17 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
         <div className={styles.listSection}>
           {projects[_locale].slice(0, 4).map((project, idx) => {
             const img = project.image[0] ?? "";
+            const startDate = new Date(project.start);
+            const endDate = new Date(project.end);
             return (
               <div className={styles.list} key={idx}>
                 <div className="row">
                   <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
                     <section>
+                      <span>
+                        {startDate.getFullYear()}.{startDate.getMonth() + 1} -{" "}
+                        {endDate.getFullYear()}.{endDate.getMonth() + 1}
+                      </span>
                       <h3 className={styles.title}>{project.name}</h3>
                       <ul className={styles.stack}>
                         {project.techStack.map((stack, idx) => {
