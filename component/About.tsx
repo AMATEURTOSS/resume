@@ -1,8 +1,13 @@
 import { FC } from "react";
 import share from "../styles/share.module.css";
 import styles from "../styles/component/About.module.css";
+import { text } from "../i18n";
+import { useRouter } from "next/router";
 
 const About: FC = () => {
+  const { locale } = useRouter();
+  const _locale = locale !== "kr" && locale !== "en-US" ? "kr" : locale;
+
   function downloadResume() {
     window.print();
   }
@@ -12,15 +17,7 @@ const About: FC = () => {
       <div className="container">
         <section>
           <h2 className={share.heading}>About Me</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            interdum ante a porta blandit. Quisque velit tortor, ultricies in
-            quam ut, luctus convallis metus. Nunc vitae felis rutrum, mattis
-            justo quis, bibendum tellus. Integer bibendum eget dolor nec
-            venenatis. Aliquam erat volutpat. Etiam et est vitae turpis accumsan
-            vulputate. Curabitur et vehicula nisl, eu congue dolor. Vivamus nec
-            hendrerit mi Nulla consequat tempor.
-          </p>
+          <p>{text[_locale]["aboutme.explain"]()}</p>
           <div className={`${styles.buttonSec} text-center`}>
             <button className={share.button} onClick={downloadResume}>
               Download Resume
