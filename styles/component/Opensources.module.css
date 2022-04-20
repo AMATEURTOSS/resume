@@ -178,3 +178,9 @@
     padding-bottom: 60px;
   }
 }
+
+@media print {
+  .section {
+    margin-bottom: 500px;
+  }
+}

@@ -51,3 +51,9 @@
     padding-bottom: 30px;
   }
 }
+
+@media print {
+  .footer {
+    display: none;
+  }
+}

@@ -33,3 +33,9 @@
     margin-bottom: 30px;
   }
 }
+
+@media print {
+  .buttonSec button {
+    display: none;
+  }
+}

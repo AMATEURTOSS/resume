@@ -78,3 +78,9 @@ span.department {
     padding-right: 0;
   }
 }
+
+@media print {
+  .section {
+    margin-bottom: 500px;
+  }
+}

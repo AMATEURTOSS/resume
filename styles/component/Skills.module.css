@@ -37,3 +37,9 @@
     font-size: 14px;
   }
 }
+
+@media print {
+  .skillsSection {
+    margin-bottom: 1000px;
+  }
+}
