@@ -71,7 +71,7 @@ const Header: FC = () => {
                 className="form-select"
                 value={_locale}
                 onChange={(e) => {
-                  if (e.target.value === "kr") location.href = "/";
+                  if (e.target.value === "ko-KR") location.href = "/";
                   else if (e.target.value === "en-US") location.href = "/en-US";
                 }}
               >
