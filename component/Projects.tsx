@@ -5,31 +5,28 @@ import { Projects } from "../pages/api/project";
 import { useRouter } from "next/router";
 import { i18n } from "../i18n";
 
-function getIconFromTechStack(
-  techStack: string,
-  idx: number
-): JSX.Element | undefined {
+function getIconFromTechStack(techStack: string): JSX.Element | undefined {
   switch (techStack) {
     case "c":
-      return <i key={idx} className="devicon-c-plain colored" />;
+      return <i className="devicon-c-plain colored" />;
     case "c++":
-      return <i key={idx} className="devicon-cplusplus-plain colored" />;
+      return <i className="devicon-cplusplus-plain colored" />;
     case "nextjs":
-      return <i key={idx} className="devicon-nextjs-plain colored" />;
+      return <i className="devicon-nextjs-plain colored" />;
     case "nestjs":
-      return <i key={idx} className="devicon-nestjs-plain colored" />;
+      return <i className="devicon-nestjs-plain colored" />;
     case "mariadb" || "mysql":
-      return <i key={idx} className="devicon-mysql-plain colored" />;
+      return <i className="devicon-mysql-plain colored" />;
     case "nginx":
-      return <i key={idx} className="devicon-nginx-plain colored" />;
+      return <i className="devicon-nginx-plain colored" />;
     case "grafana":
-      return <i key={idx} className="devicon-grafana-original colored" />;
+      return <i className="devicon-grafana-original colored" />;
     case "reactjs":
-      return <i key={idx} className="devicon-react-original colored" />;
+      return <i className="devicon-react-original colored" />;
     case "postgresql":
-      return <i key={idx} className="devicon-postgresql-plain colored" />;
+      return <i className="devicon-postgresql-plain colored" />;
     case "python":
-      return <i key={idx} className="devicon-python-plain colored" />;
+      return <i className="devicon-python-plain colored" />;
     default:
       return undefined;
   }
@@ -57,9 +54,10 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                     <section>
                       <h3 className={styles.title}>{project.name}</h3>
                       <ul className={styles.stack}>
-                        {project.techStack.map((stack, idx) => (
-                          <>{getIconFromTechStack(stack, idx)}</>
-                        ))}
+                        {project.techStack.map((stack, idx) => {
+                          const i = getIconFromTechStack(stack);
+                          if (i) return <li key={idx}>{i}</li>;
+                        })}
                       </ul>
                       <p>{project.describe} </p>
                       <a

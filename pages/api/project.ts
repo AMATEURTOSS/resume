@@ -57,7 +57,7 @@ export const getData = async (): Promise<i18n<Projects>> => {
         url: undefined,
         start: new Date("2021-06-01"),
         end: new Date("2021-11-01"),
-        techStack: ["reactjs", "nestjs", "postgres"],
+        techStack: ["reactjs", "nestjs", "postgresql"],
         describe:
           "온라인 실시간 탁구 게임채팅, Dm, 친구 추가/삭제, 전적 등의 서비스를 제공하는 웹 어플리케이션입니다.",
         image: ["/project/pong_pong_website/1.gif"],
