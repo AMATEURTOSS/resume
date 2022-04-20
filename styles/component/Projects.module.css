@@ -28,8 +28,6 @@
   font-size: 30px;
   line-height: 36px;
   font-weight: 600;
-  margin-bottom: 30px;
-  text-wrap: wrap;
 }
 
 .list p {
@@ -100,6 +98,13 @@
   width: 8px;
   height: 8px;
   background-color: #373737;
+}
+
+.stack {
+  display: flex;
+  gap: 0.5em;
+  padding-bottom: 10px;
+  font-size: 2em;
 }
 
 @media (max-width: 768px) {
