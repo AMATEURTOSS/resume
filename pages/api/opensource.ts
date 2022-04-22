@@ -25,19 +25,23 @@ export interface Project {
 export type OpenSource = Array<Project>;
 
 async function getOpensourceLabels(owner: string, repo: string) {
-  const result = await axios.get(
-    `https://api.github.com/search/issues?q=author%3A${"AMATEURTOSS"}+type%3Apr+repo%3A${owner}/${repo}`
-  );
-  const labels: Array<Label> = result.data.items.reduce(
-    (acc: Array<Label>, cur: { labels: Array<Label> }) => {
-      return [...acc, ...cur.labels];
-    },
-    []
-  );
-  return labels.filter(
-    (value, index, self) =>
-      index === self.findIndex((t) => t.name === value.name)
-  );
+  try {
+    const result = await axios.get(
+      `https://api.github.com/search/issues?q=author%3A${"AMATEURTOSS"}+type%3Apr+repo%3A${owner}/${repo}`
+    );
+    const labels: Array<Label> = result.data.items.reduce(
+      (acc: Array<Label>, cur: { labels: Array<Label> }) => {
+        return [...acc, ...cur.labels];
+      },
+      []
+    );
+    return labels.filter(
+      (value, index, self) =>
+        index === self.findIndex((t) => t.name === value.name)
+    );
+  } catch (e) {
+    return [];
+  }
 }
 
 export const getData = async (): Promise<i18n<OpenSource>> => {
