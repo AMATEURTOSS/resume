@@ -4,7 +4,7 @@ import styles from "../styles/component/Projects.module.css";
 import { Projects } from "../pages/api/project";
 import { useRouter } from "next/router";
 import { i18n } from "../i18n";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Tooltip, OverlayTrigger } from "react-bootstrap";
 
 function getIconFromTechStack(techStack: string): JSX.Element | undefined {
   switch (techStack) {
@@ -63,7 +63,16 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                       <ul className={styles.stack}>
                         {project.techStack.map((stack, idx) => {
                           const i = getIconFromTechStack(stack);
-                          if (i) return <li key={idx}>{i}</li>;
+                          if (i)
+                            return (
+                              <OverlayTrigger
+                                key={idx}
+                                placement="top"
+                                overlay={<Tooltip>{stack}</Tooltip>}
+                              >
+                                <li>{i}</li>
+                              </OverlayTrigger>
+                            );
                         })}
                       </ul>
                       <p>{project.describe} </p>
