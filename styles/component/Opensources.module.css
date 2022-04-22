@@ -17,6 +17,7 @@
 
 .list figure {
   height: 300px;
+  float: right;
 }
 
 .list img {

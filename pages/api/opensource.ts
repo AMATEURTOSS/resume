@@ -54,6 +54,16 @@ export const getData = async (): Promise<i18n<OpenSource>> => {
         describe:
           "tldr 프로젝트는 기존 매뉴얼 페이지 보다 더 간단하고 접근하기 쉬운 명령줄 도구 도움말 페이지 모음입니다.",
       },
+      {
+        name: "fig",
+        url: "https://github.com/withfig/autocomplete",
+        issueURL: undefined,
+        prURL:
+          "https://github.com/withfig/autocomplete/pulls?q=is%3Aissue+is%3Apr+author%3AAMATEURTOSS+",
+        logo: "/opensource/fig.png",
+        labels: await getOpensourceLabels("withfig", "autocomplete"),
+        describe: "fig는 기존 터미널에 자동완성을 추가하는 프로젝트입니다.",
+      },
     ],
     "en-US": [
       {
@@ -66,6 +76,17 @@ export const getData = async (): Promise<i18n<OpenSource>> => {
         labels: await getOpensourceLabels("tldr-pages", "tldr"),
         describe:
           "The tldr project is a collection of command-line tool help pages that are simpler and easier to access than traditional manual pages.",
+      },
+      {
+        name: "fig",
+        url: "https://github.com/withfig/autocomplete",
+        issueURL: undefined,
+        prURL:
+          "https://github.com/withfig/autocomplete/pulls?q=is%3Aissue+is%3Apr+author%3AAMATEURTOSS+",
+        logo: "/opensource/fig.png",
+        labels: await getOpensourceLabels("withfig", "autocomplete"),
+        describe:
+          "Fig adds visual apps, shortcuts, and autocomplete to your existing Terminal.",
       },
     ],
   };
