@@ -19,13 +19,15 @@ async function getOpensourceCount() {
   const opensource = (await opensourceGetData())["ko-KR"];
   await Promise.all(
     opensource.map(async (project) => {
-      const split = project.url.split("/");
-      const owner = split[split.length - 2];
-      const repo = split[split.length - 1];
-      const result = await axios.get(
-        `https://api.github.com/search/issues?q=author%3A${"AMATEURTOSS"}+type%3Apr+repo%3A${owner}/${repo}`
-      );
-      total += result.data.total_count;
+      try {
+        const split = project.url.split("/");
+        const owner = split[split.length - 2];
+        const repo = split[split.length - 1];
+        const result = await axios.get(
+          `https://api.github.com/search/issues?q=author%3A${"AMATEURTOSS"}+type%3Apr+repo%3A${owner}/${repo}`
+        );
+        total += result.data.total_count;
+      } catch (e) {}
     })
   );
   return total;
