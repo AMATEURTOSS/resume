@@ -11,19 +11,35 @@ const Footer: FC = () => {
   return (
     <footer className={`${styles.footer} text-center`}>
       <div className="container">
-        <section>
-          <span>Stay in touch</span>
-          <h4>{text[_locale]["footer.h4"]}</h4>
-          <p>{text[_locale]["footer.free2talk"]}</p>
-          <a
-            href="mailto:amateur.toss@gmail.com"
-            className={share.button}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {text[_locale]["footer.button"]}
-          </a>
-        </section>
+        <ul className={styles.social}>
+          <li>
+            <a
+              href="https://github.com/AMATEURTOSS"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="ri-github-fill" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.amateurtoss.info/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="ri-pages-line" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/%EC%98%81%EC%A7%84-%EC%B5%9C-588655229/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="ri-linkedin-fill" />
+            </a>
+          </li>
+        </ul>
         <span className={styles.copyright}>© 2022 All rights reserved.</span>
       </div>
     </footer>
