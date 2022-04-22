@@ -28,7 +28,9 @@
     padding-right: 10px;
     padding-bottom: 0;
   }
-  .skillsSection :global(.col-12) {
+
+  /* .col-12 */
+  .skillsSection div div div {
     margin-bottom: 40px;
   }
   .skillsList li {

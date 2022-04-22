@@ -3,6 +3,7 @@ import share from "../styles/share.module.css";
 import styles from "../styles/component/About.module.css";
 import { text } from "../i18n";
 import { useRouter } from "next/router";
+import { Container } from "react-bootstrap";
 
 const About: FC = () => {
   const { locale } = useRouter();
@@ -14,7 +15,7 @@ const About: FC = () => {
 
   return (
     <div className={styles.aboutSection}>
-      <div className="container">
+      <Container>
         <section>
           <h2 className={share.heading}>About Me</h2>
           <p>{text[_locale]["aboutme.explain"]()}</p>
@@ -24,7 +25,7 @@ const About: FC = () => {
             </button>
           </div>
         </section>
-      </div>
+      </Container>
     </div>
   );
 };

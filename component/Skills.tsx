@@ -4,6 +4,7 @@ import styles from "../styles/component/Skills.module.css";
 import type { TechStack } from "../pages/api/techstack";
 import { useRouter } from "next/router";
 import { i18n } from "../i18n";
+import { Container, Row, Col } from "react-bootstrap";
 
 interface SkillsProps {
   techStack: i18n<TechStack>;
@@ -15,26 +16,26 @@ const Skills: FC<SkillsProps> = ({ techStack }) => {
 
   return (
     <div className={styles.skillsSection}>
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+      <Container>
+        <Row>
+          <Col sm={12} md={6} lg={6} xl={6} xxl={6}>
             <h2 className={share.heading}>Core Skills</h2>
             <ul className={styles.skillsList}>
               {techStack[_locale].coreStack.map((el, idx) => (
                 <li key={idx}>{el}</li>
               ))}
             </ul>
-          </div>
-          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+          </Col>
+          <Col sm={12} md={6} lg={6} xl={6} xxl={6}>
             <h2 className={share.heading}>Other Skills</h2>
             <ul className={styles.skillsList}>
               {techStack[_locale].otherStack.map((el, idx) => (
                 <li key={idx}>{el}</li>
               ))}
             </ul>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

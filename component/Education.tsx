@@ -4,6 +4,7 @@ import styles from "../styles/component/Education.module.css";
 import type { Schools } from "../pages/api/education";
 import { i18n, text } from "../i18n";
 import { useRouter } from "next/router";
+import { Container, Col, Row } from "react-bootstrap";
 
 interface EducationProps {
   edu: i18n<Schools>;
@@ -15,9 +16,9 @@ const Education: FC<EducationProps> = ({ edu }) => {
 
   return (
     <div className={styles.section}>
-      <div className="container">
+      <Container>
         <h2 className={share.heading}>Education</h2>
-        <div className={`row ${styles.list}`}>
+        <Row className={styles.list}>
           {edu[_locale]
             .slice(0)
             .reverse()
@@ -27,10 +28,7 @@ const Education: FC<EducationProps> = ({ edu }) => {
                 ? new Date(school.graduationDate).getFullYear()
                 : text[_locale]["education.current"];
               return (
-                <div
-                  className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6"
-                  key={idx}
-                >
+                <Col sm={12} md={6} lg={6} xl={6} xxl={6} key={idx}>
                   <section>
                     <span className={styles.year}>
                       {enter} - {out}
@@ -41,11 +39,11 @@ const Education: FC<EducationProps> = ({ edu }) => {
                     {/*</span>*/}
                     <p>{school.describe}</p>
                   </section>
-                </div>
+                </Col>
               );
             })}
-        </div>
-      </div>
+        </Row>
+      </Container>
     </div>
   );
 };

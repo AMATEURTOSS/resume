@@ -1,16 +1,11 @@
 import { FC } from "react";
-import share from "../styles/share.module.css";
 import styles from "../styles/component/Footer.module.css";
-import { useRouter } from "next/router";
-import { text } from "../i18n";
+import { Container } from "react-bootstrap";
 
 const Footer: FC = () => {
-  const { locale } = useRouter();
-  const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
-
   return (
     <footer className={`${styles.footer} text-center`}>
-      <div className="container">
+      <Container>
         <ul className={styles.social}>
           <li>
             <a
@@ -41,7 +36,7 @@ const Footer: FC = () => {
           </li>
         </ul>
         <span className={styles.copyright}>© 2022 All rights reserved.</span>
-      </div>
+      </Container>
     </footer>
   );
 };

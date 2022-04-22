@@ -3,6 +3,7 @@ import styles from "../styles/component/Banner.module.css";
 import type { WhoAmI } from "../pages/api/whoami";
 import { i18n, text } from "../i18n";
 import { useRouter } from "next/router";
+import { Container, Row, Col } from "react-bootstrap";
 
 interface BannerProps {
   whoami: i18n<WhoAmI>;
@@ -14,14 +15,14 @@ const Banner: FC<BannerProps> = ({ whoami }) => {
 
   return (
     <div className={styles.banner}>
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
+      <Container>
+        <Row>
+          <Col sm={12} md={5} lg={5} xl={5} xxl={5}>
             <figure>
-              <img src="/profile2.jpg" />
+              <img src="/profile2.jpg" alt="프로필 사진" />
             </figure>
-          </div>
-          <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
+          </Col>
+          <Col sm={12} md={7} lg={7} xl={7} xxl={7}>
             <section>
               <h1>
                 <span>{text[_locale]["banner.hi"]}</span>
@@ -54,9 +55,9 @@ const Banner: FC<BannerProps> = ({ whoami }) => {
                 </div>
               </div>
             </section>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

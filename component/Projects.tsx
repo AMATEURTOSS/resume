@@ -4,6 +4,7 @@ import styles from "../styles/component/Projects.module.css";
 import { Projects } from "../pages/api/project";
 import { useRouter } from "next/router";
 import { i18n } from "../i18n";
+import { Container, Row, Col } from "react-bootstrap";
 
 function getIconFromTechStack(techStack: string): JSX.Element | undefined {
   switch (techStack) {
@@ -42,7 +43,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
 
   return (
     <div className={styles.section}>
-      <div className="container">
+      <Container>
         <h2 className={share.heading}>Personal Projects</h2>
         <div className={styles.listSection}>
           {projects[_locale].slice(0, 4).map((project, idx) => {
@@ -51,8 +52,8 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
             const endDate = new Date(project.end);
             return (
               <div className={styles.list} key={idx}>
-                <div className="row">
-                  <div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
+                <Row>
+                  <Col sm={12} md={7} lg={7} xl={7} xxl={7}>
                     <section>
                       <span>
                         {startDate.getFullYear()}.{startDate.getMonth() + 1} -{" "}
@@ -75,18 +76,18 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                         Details
                       </a>
                     </section>
-                  </div>
-                  <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
+                  </Col>
+                  <Col sm={12} md={5} lg={5} xl={5} xxl={5}>
                     <figure>
                       <img src={img} />
                     </figure>
-                  </div>
-                </div>
+                  </Col>
+                </Row>
               </div>
             );
           })}
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

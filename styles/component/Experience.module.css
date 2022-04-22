@@ -74,7 +74,7 @@ span.department {
     padding-bottom: 0;
   }
 
-  .list :global(.col-12) {
+  .list div {
     margin-bottom: 40px;
   }
 

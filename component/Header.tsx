@@ -1,7 +1,8 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef } from "react";
 import Link from "next/link";
 import styles from "../styles/component/Header.module.css";
 import { useRouter } from "next/router";
+import { Container } from "react-bootstrap";
 
 const Header: FC = () => {
   const header = useRef<HTMLElement>(null);
@@ -31,7 +32,7 @@ const Header: FC = () => {
 
   return (
     <header className={styles.header} id="site-header" ref={header}>
-      <div className="container">
+      <Container>
         <div className={styles.headerInner}>
           <Link href="/">
             <div className={styles.logo}>
@@ -81,7 +82,7 @@ const Header: FC = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </Container>
     </header>
   );
 };

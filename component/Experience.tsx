@@ -4,6 +4,7 @@ import styles from "../styles/component/Experience.module.css";
 import type { Career } from "../pages/api/career";
 import { useRouter } from "next/router";
 import { i18n, text } from "../i18n";
+import { Container, Row, Col } from "react-bootstrap";
 
 interface ExperienceProps {
   career: i18n<Career>;
@@ -15,19 +16,16 @@ const Experience: FC<ExperienceProps> = ({ career }) => {
 
   return (
     <div className={styles.section}>
-      <div className="container">
+      <Container>
         <h2 className={share.heading}>Work Experience</h2>
-        <div className={`row ${styles.list}`}>
+        <Row className={styles.list}>
           {career[_locale].map((company, idx) => {
             const enter = new Date(company.enteringDate).getFullYear();
             const out = company.resignationDate
               ? new Date(company.resignationDate).getFullYear()
               : text[_locale]["experience.current"];
             return (
-              <div
-                className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6"
-                key={idx}
-              >
+              <Col sm={12} md={6} lg={6} xl={6} xxl={6} key={idx}>
                 <section>
                   <span className={styles.year}>
                     {enter} - {out}
@@ -43,11 +41,11 @@ const Experience: FC<ExperienceProps> = ({ career }) => {
                     ))}
                   </ul>
                 </section>
-              </div>
+              </Col>
             );
           })}
-        </div>
-      </div>
+        </Row>
+      </Container>
     </div>
   );
 };
