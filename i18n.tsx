@@ -56,7 +56,7 @@ export const text: i18n<any> = {
     "experience.current": "current",
     "education.current": "current",
     "footer.h4": "Ready to talk?",
-    "footer.free2talk": "fell free to contact",
+    "footer.free2talk": "feel free to contact",
     "footer.button": "contact",
   },
 };
