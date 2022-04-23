@@ -27,7 +27,12 @@ export type OpenSource = Array<Project>;
 async function getOpensourceLabels(owner: string, repo: string) {
   try {
     const result = await axios.get(
-      `https://api.github.com/search/issues?q=author%3A${"AMATEURTOSS"}+type%3Apr+repo%3A${owner}/${repo}`
+      `https://api.github.com/search/issues?q=author%3A${"AMATEURTOSS"}+type%3Apr+repo%3A${owner}/${repo}`,
+      {
+        headers: {
+          Authorization: `token ${process.env.GITHUB_AUTH}`,
+        },
+      }
     );
     const labels: Array<Label> = result.data.items.reduce(
       (acc: Array<Label>, cur: { labels: Array<Label> }) => {

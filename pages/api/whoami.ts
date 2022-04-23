@@ -24,7 +24,12 @@ async function getOpensourceCount() {
         const owner = split[split.length - 2];
         const repo = split[split.length - 1];
         const result = await axios.get(
-          `https://api.github.com/search/issues?q=author%3A${"AMATEURTOSS"}+type%3Apr+repo%3A${owner}/${repo}`
+          `https://api.github.com/search/issues?q=author%3A${"AMATEURTOSS"}+type%3Apr+repo%3A${owner}/${repo}`,
+          {
+            headers: {
+              Authorization: `token ${process.env.GITHUB_AUTH}`,
+            },
+          }
         );
         total += result.data.total_count;
       } catch (e) {}
