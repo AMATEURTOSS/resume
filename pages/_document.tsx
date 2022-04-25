@@ -23,6 +23,22 @@ export default function Document() {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
         />
+        {/*Global site tag (gtag.js) - Google Analytics*/}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+    
+              gtag('config', '${process.env.GOOGLE_ANALYTICS}');
+          `,
+          }}
+        />
       </Head>
       <body>
         <Main />
