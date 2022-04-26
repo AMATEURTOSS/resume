@@ -181,7 +181,7 @@
 }
 
 @media print {
-  .section {
+  .list {
     margin-bottom: 500px;
   }
 }
