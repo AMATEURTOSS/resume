@@ -25,7 +25,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
             const startDate = new Date(project.start);
             const endDate = new Date(project.end);
             return (
-              <div className={styles.list} key={idx}>
+              <div className={styles.list} key={idx} id="project">
                 <Row>
                   <Col sm={12} md={7} lg={7} xl={7} xxl={7}>
                     <section>

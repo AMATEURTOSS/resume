@@ -13,6 +13,14 @@ const Banner: FC<BannerProps> = ({ whoami }) => {
   const { locale } = useRouter();
   const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
+  function goto(target: string) {
+    const yOffset = -100;
+    const element = document.getElementById(target);
+    if (!element) throw Error();
+    const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+
   return (
     <div className={styles.banner}>
       <Container>
@@ -31,15 +39,15 @@ const Banner: FC<BannerProps> = ({ whoami }) => {
                 {text[_locale]["banner.intro"](whoami[_locale].name)}
               </h1>
               <ul className={styles.numbervalulist}>
-                <li>
+                <li onClick={() => goto("experience")}>
                   <strong>{whoami[_locale].year}</strong>
                   <span>{text[_locale]["banner.year"]}</span>
                 </li>
-                <li>
+                <li onClick={() => goto("project")}>
                   <strong>{whoami[_locale].projectCount}+</strong>
                   <span>{text[_locale]["banner.project"]}</span>
                 </li>
-                <li>
+                <li onClick={() => goto("opensource")}>
                   <strong>{whoami[_locale].opensourceCount}+</strong>
                   <span>{text[_locale]["banner.opensource"]}</span>
                 </li>

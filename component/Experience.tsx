@@ -15,7 +15,7 @@ const Experience: FC<ExperienceProps> = ({ career }) => {
   const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id="experience">
       <Container>
         <h2 className={share.heading}>Work Experience</h2>
         <Row className={styles.list}>
