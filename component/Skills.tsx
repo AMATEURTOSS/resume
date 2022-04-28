@@ -22,7 +22,10 @@ const Skills: FC<SkillsProps> = ({ techStack }) => {
             <h2 className={share.heading}>Core Skills</h2>
             <ul className={styles.skillsList}>
               {techStack[_locale].coreStack.map((el, idx) => (
-                <li key={idx}>{el}</li>
+                <li key={idx}>
+                  <i className={el.icon} />
+                  {el.tech}
+                </li>
               ))}
             </ul>
           </Col>
@@ -30,7 +33,10 @@ const Skills: FC<SkillsProps> = ({ techStack }) => {
             <h2 className={share.heading}>Other Skills</h2>
             <ul className={styles.skillsList}>
               {techStack[_locale].otherStack.map((el, idx) => (
-                <li key={idx}>{el}</li>
+                <li key={idx}>
+                  <i className={el.icon} />
+                  {el.tech}
+                </li>
               ))}
             </ul>
           </Col>
