@@ -10,7 +10,11 @@ const About: FC = () => {
   const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   function downloadResume() {
-    window.print();
+    (window as any).Tawk_API.hideWidget();
+    setTimeout(() => {
+      window.print();
+      (window as any).Tawk_API.showWidget();
+    }, 1);
   }
 
   return (
