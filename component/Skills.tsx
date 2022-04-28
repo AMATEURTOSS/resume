@@ -2,6 +2,7 @@ import { FC } from "react";
 import share from "../styles/share.module.css";
 import styles from "../styles/component/Skills.module.css";
 import type { TechStack } from "../pages/api/techstack";
+import Utils from "../utils";
 import { useRouter } from "next/router";
 import { i18n } from "../i18n";
 import { Container, Row, Col } from "react-bootstrap";
@@ -23,8 +24,8 @@ const Skills: FC<SkillsProps> = ({ techStack }) => {
             <ul className={styles.skillsList}>
               {techStack[_locale].coreStack.map((el, idx) => (
                 <li key={idx}>
-                  <i className={el.icon} />
-                  {el.tech}
+                  <i className={Utils.getIconFromTechStack(el)} />
+                  {el}
                 </li>
               ))}
             </ul>
@@ -34,8 +35,8 @@ const Skills: FC<SkillsProps> = ({ techStack }) => {
             <ul className={styles.skillsList}>
               {techStack[_locale].otherStack.map((el, idx) => (
                 <li key={idx}>
-                  <i className={el.icon} />
-                  {el.tech}
+                  <i className={Utils.getIconFromTechStack(el)} />
+                  {el}
                 </li>
               ))}
             </ul>
