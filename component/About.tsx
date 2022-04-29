@@ -9,13 +9,16 @@ const About: FC = () => {
   const { locale } = useRouter();
   const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
-  function downloadResume() {
-    (window as any).Tawk_API.hideWidget();
-    setTimeout(() => {
-      window.print();
-      (window as any).Tawk_API.showWidget();
-    }, 1);
-  }
+  /* pdf 생성용 함수, <a>Download Resume</a> 태그를 button으로 바꾼뒤
+     실행시켜 pdf로 전환 후에 a tag로 다시 변경
+   */
+  // function downloadResume() {
+  //   (window as any).Tawk_API.hideWidget();
+  //   setTimeout(() => {
+  //     window.print();
+  //     (window as any).Tawk_API.showWidget();
+  //   }, 1);
+  // }
 
   return (
     <div className={styles.aboutSection}>
@@ -24,9 +27,14 @@ const About: FC = () => {
           <h2 className={share.heading}>About Me</h2>
           <p>{text[_locale]["aboutme.explain"]()}</p>
           <div className={`${styles.buttonSec} text-center`}>
-            <button className={share.button} onClick={downloadResume}>
+            <a
+              className={share.button}
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
               Download Resume
-            </button>
+            </a>
           </div>
         </section>
       </Container>
