@@ -26,6 +26,7 @@ export const getData = async (): Promise<i18n<Career>> => {
         projects: [
           '"내pc돌보미" 단체 예약 페이지 UI 구현',
           '"내pc돌보미" nice 본인인증 api를 활용하여 만 14세 미만 학생용 학부모 동의 페이지 백엔드 서버 및 UI 구현',
+          '"내pc돌보미" 점검원 배정 로직 리팩토링',
         ],
       },
     ],
