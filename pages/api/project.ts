@@ -18,6 +18,16 @@ export const getData = async (): Promise<i18n<Projects>> => {
   const projects: i18n<Projects> = {
     "ko-KR": [
       {
+        name: "사실이 아닙니다! 생성기",
+        githubURL: "https://github.com/AMATEURTOSS/not_true_generator",
+        url: "https://not-true-generator.vercel.app",
+        start: new Date("2022-05-03"),
+        end: new Date("2022-05-04"),
+        techStack: ["typescript", "nextjs", "tailwindcss"],
+        describe: "사실이 아닙니다! 이미지를 만들어주는 사이트입니다.",
+        image: [],
+      },
+      {
         name: "ft_linear_regression",
         githubURL: "https://github.com/AMATEURTOSS/ft_linear_regression",
         url: undefined,
@@ -37,6 +47,7 @@ export const getData = async (): Promise<i18n<Projects>> => {
         start: new Date("2021-11-01"),
         end: new Date("2022-01-01"),
         techStack: [
+          "typescript",
           "nextjs",
           "nestjs",
           "c++",
@@ -57,7 +68,7 @@ export const getData = async (): Promise<i18n<Projects>> => {
         url: undefined,
         start: new Date("2021-06-01"),
         end: new Date("2021-11-01"),
-        techStack: ["reactjs", "nestjs", "postgresql"],
+        techStack: ["typescript", "reactjs", "nestjs", "postgresql"],
         describe:
           "온라인 실시간 탁구 게임채팅, Dm, 친구 추가/삭제, 전적 등의 서비스를 제공하는 웹 어플리케이션입니다.",
         image: ["/project/pong_pong_website/1.gif"],

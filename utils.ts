@@ -36,6 +36,8 @@ class Utils {
         return "devicon-docker-plain colored";
       case "git":
         return "devicon-git-plain colored";
+      case "tailwindcss":
+        return "devicon-tailwindcss-plain colored";
       default:
         return "";
     }
