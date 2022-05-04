@@ -34,14 +34,17 @@ async function getOpensourceLabels(owner: string, repo: string) {
         },
       }
     );
+    /* label들 하나의 배열로 */
     const labels: Array<Label> = result.data.items.reduce(
       (acc: Array<Label>, cur: { labels: Array<Label> }) => {
         return [...acc, ...cur.labels];
       },
       []
     );
+    /* review needed 라벨과 중복되는 라벨들 제거*/
     return labels.filter(
       (value, index, self) =>
+        value.name !== "review needed" &&
         index === self.findIndex((t) => t.name === value.name)
     );
   } catch (e) {
