@@ -215,6 +215,7 @@ export const getData = async (): Promise<i18n<Projects>> => {
         start: new Date("2021-11-01"),
         end: new Date("2022-01-01"),
         techStack: [
+          "typescript",
           "nextjs",
           "nestjs",
           "c++",
@@ -236,7 +237,7 @@ export const getData = async (): Promise<i18n<Projects>> => {
         url: undefined,
         start: new Date("2021-06-01"),
         end: new Date("2021-11-01"),
-        techStack: ["reactjs", "nestjs", "postgres"],
+        techStack: ["typescript", "reactjs", "nestjs", "postgres"],
         describe:
           "It is a web application that provides online real-time table tennis game chat, Dm, add/delete friends, and transfer.",
         image: ["/project/pong_pong_website/1.gif"],
