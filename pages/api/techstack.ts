@@ -17,6 +17,7 @@ export const getData = async (): Promise<i18n<TechStack>> => {
         "react",
         "expressjs",
         "nextjs",
+        "tailwindcss",
         "docker",
         "git",
       ],
