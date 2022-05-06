@@ -18,9 +18,8 @@ export const text: i18n<any> = {
         교육기관인 Ecole42 가 42Seoul이라는 이름으로 한국에 들어온다는 소식을
         들었습니다. 대학교도 좋지만, 실무 능력을 기르고 싶다는 생각에 고등학교를
         졸업하고 한달동안 치뤄진 입학시험(라피신)을 거쳐 42Seoul 에
-        입학하였습니다. 42Seoul에서는 동료들과 C/C++, JS, Network, Computer
-        Science 등에 대해 공부했습니다. 현재는 F1 Security에서 웹 개발자로
-        근무하고 있습니다.
+        입학하였습니다. 42Seoul에서는 2년간 동료들과 C/C++, JS, Network,
+        Computer Science 등에 대해 공부했습니다.
       </>
     ),
     "experience.current": "재직 중",
@@ -49,8 +48,8 @@ export const text: i18n<any> = {
         will enter Korea under the name of 42Seoul. College is good, but I
         wanted to develop practical skills, so I graduated from high school and
         entered 42Seoul after a month-long entrance examination. At 42Seoul, I
-        studied with my colleagues C/C++, JS, Network, Computer Science. I am
-        currently working as a web developer at F1 Security.
+        studied for 2 years with my colleagues C/C++, JS, Network, Computer
+        Science.
       </>
     ),
     "experience.current": "current",
