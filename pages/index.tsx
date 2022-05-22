@@ -66,7 +66,7 @@ const Home: NextPage<Props> = (info) => {
       <Banner whoami={whoami} />
       <About />
       <Skills techStack={techStack} />
-      {/*<Experience career={career} />*/}
+      <Experience career={career} />
       <Education edu={edu} />
       <Opensources opensources={opensource} />
       <Projects projects={projects} />
