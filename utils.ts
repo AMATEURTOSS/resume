@@ -21,6 +21,9 @@ class Utils {
         return "devicon-react-original colored";
       case "postgresql":
         return "devicon-postgresql-plain colored";
+      case "go":
+      case "golang":
+        return "devicon-go-original-wordmark colored";
       case "python":
         return "devicon-python-plain colored";
       case "javascript":

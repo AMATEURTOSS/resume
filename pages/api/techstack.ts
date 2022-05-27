@@ -21,7 +21,7 @@ export const getData = async (): Promise<i18n<TechStack>> => {
         "docker",
         "git",
       ],
-      otherStack: ["c", "c++", "nestjs", "python"],
+      otherStack: ["c", "c++", "nestjs", "python", "go"],
     },
     "en-US": {
       coreStack: [
@@ -36,7 +36,7 @@ export const getData = async (): Promise<i18n<TechStack>> => {
         "docker",
         "git",
       ],
-      otherStack: ["c", "c++", "nestjs", "python"],
+      otherStack: ["c", "c++", "nestjs", "python", "go"],
     },
   };
   return techStack;
