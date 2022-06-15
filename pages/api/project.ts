@@ -45,7 +45,7 @@ export const getData = async (): Promise<i18n<Projects>> => {
       },
       {
         name: "트채통",
-        githubURL: "https://github.com/team-irc/twitch-chat-analyzer",
+        githubURL: "https://github.com/team-irc/tchatong",
         url: "https://tchatong.info",
         start: new Date("2021-11-01"),
         end: new Date("2022-01-01"),
