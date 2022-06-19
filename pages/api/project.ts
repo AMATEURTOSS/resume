@@ -52,9 +52,9 @@ export const getData = async (): Promise<i18n<Projects>> => {
         techStack: [
           "typescript",
           "nextjs",
-          "nestjs",
           "go",
           "mariadb",
+          "redis",
           "python",
           "nginx",
           "telegraf",

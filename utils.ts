@@ -12,6 +12,8 @@ class Utils {
       case "mariadb":
       case "mysql":
         return "devicon-mysql-plain colored";
+      case "redis":
+        return "devicon-redis-plain-wordmark colored";
       case "nginx":
         return "devicon-nginx-plain colored";
       case "grafana":
