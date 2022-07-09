@@ -19,7 +19,7 @@ const Projects: FC<ProjectsProps> = ({ opensources }) => {
       <Container>
         <h2 className={share.heading}>Opensource Contribute</h2>
         <div className={styles.listSection}>
-          {opensources[_locale].slice(0, 3).map((os, idx) => {
+          {opensources[_locale].slice(0, 1).map((os, idx) => {
             return (
               <div className={styles.list} key={idx}>
                 <Row>

@@ -16,14 +16,9 @@ const About: FC = () => {
           <h2 className={share.heading}>About Me</h2>
           <p>{text[_locale]["aboutme.explain"]()}</p>
           <div className={`${styles.buttonSec} text-center`}>
-            <a
-              className={share.button}
-              href="/resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <button className={share.button} onClick={() => print()}>
               Download Resume
-            </a>
+            </button>
           </div>
         </section>
       </Container>
