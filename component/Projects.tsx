@@ -22,7 +22,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
         <div className={styles.listSection}>
           {projects[_locale]
             .sort((a, b) => a.sort - b.sort)
-            .slice(0, 5)
+            .slice(0, 4)
             .map((project, idx) => {
               const img = project.image[0] ?? "";
               const startDate = new Date(project.start);
