@@ -15,7 +15,7 @@ const Education: FC<EducationProps> = ({ edu }) => {
   const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   return (
-    <div className={styles.section}>
+    <div id="education" className={styles.section}>
       <Container>
         <h2 className={share.heading}>Education</h2>
         <Row className={styles.list}>

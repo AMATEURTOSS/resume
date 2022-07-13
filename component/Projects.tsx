@@ -16,7 +16,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
   const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   return (
-    <div className={styles.section}>
+    <div id="projects" className={styles.section}>
       <Container>
         <h2 className={share.heading}>Personal Projects</h2>
         <div className={styles.listSection}>

@@ -10,7 +10,7 @@ const About: FC = () => {
   const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   return (
-    <div className={styles.aboutSection}>
+    <div id="about" className={styles.aboutSection}>
       <Container>
         <section>
           <h2 className={share.heading}>About Me</h2>

@@ -31,7 +31,7 @@ const Header: FC = () => {
   }, []);
 
   return (
-    <header className={styles.header} id="site-header" ref={header}>
+    <header id="header" className={styles.header} ref={header}>
       <Container>
         <div className={styles.headerInner}>
           <Link href="/">

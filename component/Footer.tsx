@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 
 const Footer: FC = () => {
   return (
-    <footer className={`${styles.footer} text-center`}>
+    <footer id="footer" className={`${styles.footer} text-center`}>
       <Container>
         <ul className={styles.social}>
           <li>

@@ -22,7 +22,7 @@ const Banner: FC<BannerProps> = ({ whoami }) => {
   }
 
   return (
-    <div className={styles.banner}>
+    <div id="banner" className={styles.banner}>
       <Container>
         <Row>
           <Col sm={12} md={5} lg={5} xl={5} xxl={5}>

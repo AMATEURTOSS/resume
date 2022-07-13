@@ -15,7 +15,7 @@ const Projects: FC<ProjectsProps> = ({ opensources }) => {
   const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   return (
-    <div className={styles.section} id="opensource">
+    <div id="opensource" className={styles.section}>
       <Container>
         <h2 className={share.heading}>Opensource Contribute</h2>
         <div className={styles.listSection}>

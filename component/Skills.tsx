@@ -16,7 +16,7 @@ const Skills: FC<SkillsProps> = ({ techStack }) => {
   const _locale = locale !== "ko-KR" && locale !== "en-US" ? "ko-KR" : locale;
 
   return (
-    <div className={styles.skillsSection}>
+    <div id="skill" className={styles.skillsSection}>
       <Container>
         <Row>
           <Col sm={12} md={6} lg={6} xl={6} xxl={6}>
