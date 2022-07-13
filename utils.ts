@@ -43,6 +43,10 @@ class Utils {
         return "devicon-git-plain colored";
       case "tailwindcss":
         return "devicon-tailwindcss-plain colored";
+      case "kubernetes":
+        return "devicon-kubernetes-plain colored";
+      case "wordpress":
+        return "devicon-wordpress-plain colored";
       default:
         return "";
     }

@@ -21,8 +21,8 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
         <h2 className={share.heading}>Personal Projects</h2>
         <div className={styles.listSection}>
           {projects[_locale]
+            .filter((val) => val.sort !== -1)
             .sort((a, b) => a.sort - b.sort)
-            .slice(0, 4)
             .map((project, idx) => {
               const img = project.image[0] ?? "";
               const startDate = new Date(project.start);
@@ -55,14 +55,16 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
                           })}
                         </ul>
                         <p>{project.describe} </p>
-                        <a
-                          href={project.githubURL}
-                          className={share.button}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Details
-                        </a>
+                        {project.githubURL && (
+                          <a
+                            href={project.githubURL}
+                            className={share.button}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Details
+                          </a>
+                        )}
                       </section>
                     </Col>
                     <Col sm={12} md={5} lg={5} xl={5} xxl={5}>

@@ -27,7 +27,7 @@ export const getData = async (): Promise<i18n<Projects>> => {
         techStack: ["typescript", "nextjs", "tailwindcss"],
         describe: "사실이 아닙니다! 이미지를 만들어주는 사이트입니다.",
         image: [],
-        sort: 5,
+        sort: -1,
       },
       {
         name: "ft_linear_regression",
