@@ -62,7 +62,7 @@ export const getData = async (): Promise<i18n<Projects>> => {
           "grafana",
         ],
         describe:
-          "인터넷 방송 플랫폼인 Twitch에서 C++로 만든 IRC Client로 채팅 로그를 긁어와 분석, 통계를 제공하는 웹 사이트입니다.",
+          "인터넷 방송 플랫폼인 Twitch에서 GO로 만든 IRC Client로 채팅 로그를 긁어와 분석, 통계를 제공하는 웹 사이트입니다.",
         image: ["/project/tchatong/1.png"],
         sort: 1,
       },
