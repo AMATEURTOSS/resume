@@ -16,9 +16,9 @@ const About: FC = () => {
           <h2 className={share.heading}>About Me</h2>
           <p>{text[_locale]["aboutme.explain"]()}</p>
           <div className={`${styles.buttonSec} text-center`}>
-            <button className={share.button} onClick={() => print()}>
-              Download Resume
-            </button>
+            {/* <button className={share.button} onClick={() => print()}> */}
+            {/*Download Resume*/}
+            {/*</button>*/}
           </div>
         </section>
       </Container>
